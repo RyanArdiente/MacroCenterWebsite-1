@@ -12,17 +12,17 @@ Full Stack Web Application with javascript and node in the frontend, and java an
 </ul>
 
 <h4>Organziational/Development Technologies</h4>
-<ol>
+<ul>
 <li><a href="https://github.com/harakara51/MacroCenterWebsite/">GitHub</a></li>
 <li><a href="https://trello.com/b/2xdn1cbc/macro-center">Trello</a></li>
 <li><a href="#">LucidChart</a></li>
 <li>PowerPoint</li>
 
 <li>Eclipse</li>
-</ol>
+</ul>
 
 <h4>Technologies</h4>
-<ol>
+<ul>
 <li>Java</li>
 <li>CSS</li>
 <li>HTML</li>
@@ -37,7 +37,7 @@ Full Stack Web Application with javascript and node in the frontend, and java an
 <li>Node</li>
 <li>Express</li>
 
-</ol>
+</ul>
 
 <h4>Requirement Description</h4>
 The following requirement was provided by the company representative
@@ -49,7 +49,7 @@ We also want a webstore. The store should display available items to all of our 
 Ideally the application would also include inventory management. Our employees need our app to keep track of and manage our inventory. We also need a way to add new items to inventory, refresh our stock (i.e. add to the existing quantity of items), and change an item's availability (can it be viewd on the web store or not). Items that are out of stock should either indicate that they are out of stock, or not be presented in our website's store."
 
 <h4>Project Overview</h4>
-We are building a .  We are primarily using the Scrum and Agile methodologies, but will be flexible in adapting methodologies if needed.  Our project is called Classroom Helper and will assist with classroom management.
+We are building a fully functional E-Commerce web application with node and express. This is then connected to a java webAPI using SPRING MVC and mysql database
 
 <h4>Critical Features List</h4>
 <ul>
