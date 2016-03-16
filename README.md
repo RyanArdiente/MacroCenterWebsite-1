@@ -21,7 +21,7 @@ Full Stack Web Application with javascript and node in the frontend, and java an
 <li>Eclipse</li>
 </ol>
 
-<h4>Progamming Languages</h4>
+<h4>Technologies</h4>
 <ol>
 <li>Java</li>
 <li>CSS</li>
@@ -40,36 +40,30 @@ Full Stack Web Application with javascript and node in the frontend, and java an
 </ol>
 
 <h4>Requirement Description</h4>
+The following requirement was provided by the company representative
 
+"We need a public facing website for our company. It needs to incorporate a modern, simplistic, sleek and user friendly design that has information about our company and employees. We would like it to have pictures of our staff as well as display a brief bio about them. The site should also have some way of getting in touch with us and our contact information (including a map or directions to our physical location).
+
+We also want a webstore. The store should display available items to all of our traffic. It's crucial that anyone be able to view our items and add things to their cart. For a user to checkout they need to create an account, or login to an existing one. We will need their physical shipping address (as well as billing if it is different), name, email (their email is their username) and password for each user. Cookies should store the cart items of users who haven't logged in (until they login), and we want to persist our registered users carts in our database. If a user goes to checkout, it should create an order record with that item.
+
+Ideally the application would also include inventory management. Our employees need our app to keep track of and manage our inventory. We also need a way to add new items to inventory, refresh our stock (i.e. add to the existing quantity of items), and change an item's availability (can it be viewd on the web store or not). Items that are out of stock should either indicate that they are out of stock, or not be presented in our website's store."
 
 <h4>Project Overview</h4>
 We are building a .  We are primarily using the Scrum and Agile methodologies, but will be flexible in adapting methodologies if needed.  Our project is called Classroom Helper and will assist with classroom management.
 
 <h4>Critical Features List</h4>
 <ul>
-<li>Fully E-commerce application</li>
-<li>Staff Roster</li>
-<li>Attendance</li>
+<li>Fully E-commerce web application</li>
+<li>Data Persistance</li>
+<li>Mobile Friendly</li>
 <li>User login and User profiles</li>
-<li>User Permission Levels</li>
-<li>Create basic ticketing system (tickets are created and put into a queue)</li>
+<li>Modern user friendly design </li>
+
 </ul>
 
 <h4>Secondary Features List</h4>
 <ul>
-<li>Ticketing Assignments(tickets are assigned to an instructor)</li>
-<li>Ticketing Scheduling (tickets are assigned to a time slot)</li>
-<li>Attendance Notification to teachers and students when a student falls behind</li>
+<li> Email users </li>
+<li> inventory management </li>
 </ul>
 
-<h4>Tertiary Features List</h4>
-<ul>
-<li>Feedback System</li>
-<li>Grade Tracking</li>
-<li>Attendence 3.0 (Absences excused or not)</li>
-</ul>
-
-<h4>Excluded Features list</h4>
-<ul>
-<li>Student-to-Student (S2S) messaging</li>
-<li>Social Media Profiles</li>
