@@ -8,26 +8,33 @@ var app = express();
 // });
 router.get('/', function(req, res, next)
 {
-  res.render('products', {page : {
-    header : "header",
-    title : "test",
-    products : [
-
-      {
-        name : "test1",
-        price : "10.00"
-      },
-      {
-        name : "test2",
-        price : "20.00"
-      },
-      {
-        name : "test3",
-        price : "30.00"
+  // request('http://www.google.com', function (error, res, body)
+  // {
+    // if (!error && res.statusCode == 200)
+    // {
+      // console.log(body)
+      res.render('product', {page : {
+        header : "header",
+        title : "test",
+        products :  [
+          {
+            name : "test1",
+            price : "$10"
+          },
+          {
+            name : "test2",
+            price : "$20"
+          },
+          {
+            name : "test3",
+            price : "30"
+          }
+        ]
       }
-    ]
-  }
-  });
+      // res.send(body);
+    });
+  // }
+  // });
 });
 //   res.render('about', {page : about.getAbout()});
 
@@ -35,7 +42,8 @@ router.get('/Review', function(req, res, next)
 {
   request('http://www.google.com', function (error, response, body)
   {
-    if (!error && response.statusCode == 200) {
+    if (!error && response.statusCode == 200)
+    {
       console.log(body) // Show the HTML for the Google homepage.
       res.send(body);
     }
