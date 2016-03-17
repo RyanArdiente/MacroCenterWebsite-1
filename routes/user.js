@@ -37,10 +37,11 @@ router.get('/', function(req, res, next)
       // console.log(body) // Show the HTML for the Google homepage.
       // res.render('user', body);
       var users = JSON.parse(body);
-      res.render('product', {page : {
+      console.log(users);
+      res.render('user', {page : {
         header : "user",
         title : "test",
-        user : [users]
+        user : users
       }
       // res.send(body);
     });
