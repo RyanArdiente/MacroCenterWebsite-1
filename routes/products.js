@@ -27,3 +27,5 @@ router.get('/Product/Review', function(req, res, next)
     }
   });
 });
+
+module.exports = router;

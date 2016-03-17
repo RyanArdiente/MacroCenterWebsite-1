@@ -27,3 +27,5 @@ router.get('/ShoppingCart/Checkout', function(req, res, next)
     }
   });
 });
+
+module.exports = router;
