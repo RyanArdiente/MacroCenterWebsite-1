@@ -11,7 +11,6 @@ xhr.onreadystatechange = function(){
 
   xhr.send(null);
 };
-
 var xhrverb = function(method , url, callback, object){
   var xhr = new XMLHttpRequest();
   xhr.open(method, url);
