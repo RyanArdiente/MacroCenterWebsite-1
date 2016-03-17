@@ -11,17 +11,25 @@ router.get('/', function(req, res, next)
   res.render('products', {page : {
     header : "header",
     title : "test",
-      products : {
-        name : "test",
+    products : [
+
+      {
+        name : "test1",
         price : "10.00"
+      },
+      {
+        name : "test2",
+        price : "20.00"
+      },
+      {
+        name : "test3",
+        price : "30.00"
       }
-    }
+    ]
+  }
   });
-  // res.render('products.html');
-  // app.get("/about", function(req,res){
-  //   res.render('about', {page : about.getAbout()});
-  // });
 });
+//   res.render('about', {page : about.getAbout()});
 
 router.get('/Review', function(req, res, next)
 {
