@@ -4,18 +4,23 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout: 'application'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 var routes = require('./routes/index');
 var company = require("./routes/company");
-var store = require("./routes/store");
+var products = require("./routes/products");
+var shoppingCart = require("./routes/shoppingCart");
+var users = require("./routes/users");
 
-var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.set("views", __dirname + "/public/");
+app.engine("html", require ("ejs").renderFile);
+app.set("view engine", "html");
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -28,7 +33,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/company', company);
-app.use('/store', store);
+app.use('/products', products);
+app.use('/shoppingCart', shoppingCart);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
