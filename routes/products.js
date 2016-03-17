@@ -4,7 +4,6 @@ var router = express.Router();
 router.get('/', function(req, res, next)
 {
   res.render('products.html');
-
 });
 
 // router.get('/Product', function(req, res, next)
