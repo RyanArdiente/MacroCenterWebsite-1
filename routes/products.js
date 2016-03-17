@@ -8,13 +8,14 @@ var app = express();
 // });
 router.get('/', function(req, res, next)
 {
+  res.data
   res.render('products', {page : {
     header : "header",
     title : "test",
-    products : [
+    products : res.data [
 
       {
-        name : "test1",
+        name : "res.data.x",
         price : "10.00"
       },
       {
