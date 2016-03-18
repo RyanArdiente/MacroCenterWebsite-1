@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-<<<<<<< HEAD
 /* GET users listing. */
 // router.get('/', function(req, res, next)
 // {
@@ -28,29 +27,29 @@ var request = require('request');
 //   }
 // });``
 
-router.get('/', function(req, res, next)
-{
-  console.log("in user/");
-  request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
-  {
-    if (!error && response.statusCode == 200)
-    {
-
-      // console.log(body) // Show the HTML for the Google homepage.
-      // res.render('user', body);
-      var users = JSON.parse(body);
-      res.render('user', {
-        page: {
-          header: "user",
-          title: "test",
-          user: users
-        }
-        // res.send(body);
-      });
-    }
-  });
-});
-router.get('/createuser', function(req, res, next) {
+// router.get('/', function(req, res, next)
+// {
+//   console.log("in user/");
+//   request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
+//   {
+//     if (!error && response.statusCode == 200)
+//     {
+//
+//       // console.log(body) // Show the HTML for the Google homepage.
+//       // res.render('user', body);
+//       var users = JSON.parse(body);
+//       res.render('user', {
+//         page: {
+//           header: "user",
+//           title: "test",
+//           user: users
+//         }
+//         // res.send(body);
+//       });
+//     }
+//   });
+// });
+router.get('/', function(req, res, next) {
   // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
   // {
   //   if (!error && response.statusCode == 200)
@@ -62,19 +61,20 @@ router.get('/createuser', function(req, res, next) {
     page: {
       header: "<h1>this is a header</h1>",
       title: "create test",
-      script: "<script src='js/xhr.js'></script>",
-      script2 : "<script src='js/createuser.js'></script>"
+      script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
+      script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
     }
     // res.send(body);
   });
   //}
 });
 
-router.post('/createUser', function(req, res, next)
+
+router.post('/createuser', function(req, res, next)
 {
   console.log("in user/createUser");
   var obj = req.body;
-  request('http://localhost:8080/MacroCenter/rest/createUser', body, function (error, response, body)
+  request('http://localhost:8080/MacroCenter/rest/createUser', function (error, response, body)
   {
     if (!error && response.statusCode == 200)
     {
@@ -82,11 +82,12 @@ router.post('/createUser', function(req, res, next)
       // res.render('user', body);
       var users = JSON.parse(body);
       console.log(users);
-      res.render('user', {page : {
-        header : "user",
-        title : "test",
-        user : users
-      }
+      res.render('createuser', {  page: {
+          header: "<h1>this is a header</h1>",
+          title: "create test",
+          script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
+          script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
+        }
       // res.send(body);
     });
     }
