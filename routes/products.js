@@ -8,11 +8,6 @@ var app = express();
 // });
 router.get('/', function(req, res, next)
 {
-  // request('http://www.google.com', function (error, res, body)
-  // {
-    // if (!error && res.statusCode == 200)
-    // {
-      // console.log(body)
       res.render('product', {page : {
         header : "header",
         title : "test",
@@ -30,6 +25,7 @@ router.get('/', function(req, res, next)
             price : "30"
           }
         ]
+
       }
       // res.send(body);
     });

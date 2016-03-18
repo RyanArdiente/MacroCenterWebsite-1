@@ -14,6 +14,7 @@ var company = require("./routes/company");
 var products = require("./routes/products");
 var shoppingCart = require("./routes/shoppingCart");
 var user = require("./routes/user");
+var login = require("./routes/login");
 
 
 // view engine setup
@@ -31,7 +32,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
+//app.use(express.static(path.join(__dirname, 'public')));
 var about = require('./lib/about.js');
 
 app.use('/', routes);
@@ -39,6 +41,7 @@ app.use('/company', company);
 app.use('/products', products);
 app.use('/shoppingCart', shoppingCart);
 app.use('/user', user);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
