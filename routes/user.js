@@ -55,15 +55,14 @@ router.get('/createuser', function(req, res, next) {
   // console.log(body) // Show the HTML for the Google homepage.
   // res.render('user', body);
   // var users = JSON.parse(body);
-  res.render('createuser', {
-    page: {
-      header: "<h1>user</h1>",
-      title: "createuser",
-      user: "body"
-    }
-    // res.send(body);
-  });
-  //   }
+      console.log(users);
+      res.render('user', {page : {
+        header : "user",
+        title : "test",
+        user : users
+      }
+      // res.send(body);
+  /  }
   // });
 });
 
