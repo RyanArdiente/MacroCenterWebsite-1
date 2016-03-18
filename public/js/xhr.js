@@ -14,9 +14,7 @@ xhr.onreadystatechange = function(){
 var xhrverb = function(method , url, callback, object){
   var xhr = new XMLHttpRequest();
   xhr.open(method, url);
-  xhr.onreadystatechange = function(){
-    if(xhr.readyState == 4 && xhr.status < 400)
-    {
+  xhr.onreadystatechange = function(){    {
         callback(xhr.responseText);
 
     }
