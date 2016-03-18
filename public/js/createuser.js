@@ -1,23 +1,26 @@
 window.onload = function(){
   createuser.addEventListener("click", sendCreateForm)
   console.log("LOADED");
-}
+};
 var sendCreateForm = function(){
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  var name = document.getElementById("name").value;
+  var name = document.getElementById("name");
+  var username = document.getElementById("username");
+  var password = document.getElementById("password");
 
   var json = {
-      username : username,
-      password : password,
-      name : name
+      name : name.value,
+      email : username.value,
+      password : password.value
   };
+  name.value="";
+  username.value="";
+  password.value="";
 
-  xhrverb("POST", "user/createuser", createUserResults, json)
+  xhrverb("POST", "http://localhost:8080/MacroCenter/rest/createUser", createUserResults, json)
 
 }
 var createUserResults = function(data){
     creationResults.innerHTML="";
-    var json = JSON.Parse(data);
-    creationResults.innerHTML = json;
+    var json = JSON.parse(data);
+    creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
 }

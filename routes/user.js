@@ -50,7 +50,7 @@ router.get('/', function(req, res, next)
   });
 });
 
-router.get('/', function(req, res, next) {
+router.get('/createuser', function(req, res, next) {
   // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
   // {
   //   if (!error && response.statusCode == 200)
@@ -75,14 +75,19 @@ router.post('/createuser', function(req, res, next)
 {
   console.log("in user/createUser");
   var obj = req.body;
-  request('http://localhost:8080/MacroCenter/rest/createUser', function (error, response, body)
+  // request.post('http://localhost:8080/MacroCenter/rest/createUser', function (error, response, body)
+  request.post('http://localhost:8080/MacroCenter/rest/createUser', {form :{body:obj}}, function (error, response, body)
   {
+    // console.log(obj);
+    console.log(response.statusCode);
+    // if (!error && response.statusCode < 400)
     if (!error && response.statusCode == 200)
     {
+      console.log("passed");
       // console.log(body) // Show the HTML for the Google homepage.
       // res.render('user', body);
       var users = JSON.parse(body);
-      console.log(users);
+      console.log("users");
       res.render('createuser', {  page: {
           header: "<h1>this is a header</h1>",
           title: "create test",
@@ -92,6 +97,7 @@ router.post('/createuser', function(req, res, next)
       // res.send(body);
     });
     }
+    // console.log();
   });
 });
 
