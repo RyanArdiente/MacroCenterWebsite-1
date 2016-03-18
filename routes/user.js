@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 
-<<<<<<< HEAD
 /* GET users listing. */
 // router.get('/', function(req, res, next)
 // {
@@ -50,6 +49,7 @@ router.get('/', function(req, res, next)
     }
   });
 });
+
 router.get('/createuser', function(req, res, next) {
   // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
   // {
