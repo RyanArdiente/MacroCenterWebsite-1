@@ -25,27 +25,46 @@ var request = require('request');
 //     }
 //   });
 //   }
-// });
+// });``
 
-router.get('/', function(req, res, next)
-{
+router.get('/', function(req, res, next) {
   console.log("here");
-  request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
-  {
-    if (!error && response.statusCode == 200)
-    {
+  request('http://localhost:8080/MacroCenter/rest/user', function(error, response, body) {
+    console.log(JSON.parse(body));
+    if (!error && response.statusCode == 200) {
       // console.log(body) // Show the HTML for the Google homepage.
       // res.render('user', body);
       var users = JSON.parse(body);
-      res.render('product', {page : {
-        header : "user",
-        title : "test",
-        user : [users]
-      }
-      // res.send(body);
-    });
+      res.render('user', {
+        page: {
+          header: "user",
+          title: "test",
+          user: users
+        }
+        // res.send(body);
+      });
     }
   });
+});
+router.get('/createuser', function(req, res, next) {
+  console.log("here");
+  // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
+  // {
+  //   if (!error && response.statusCode == 200)
+  //   {
+  // console.log(body) // Show the HTML for the Google homepage.
+  // res.render('user', body);
+  // var users = JSON.parse(body);
+  res.render('createuser', {
+    page: {
+      header: "<h1>user</h1>",
+      title: "createuser",
+      user: "body"
+    }
+    // res.send(body);
+  });
+  //   }
+  // });
 });
 
 module.exports = router;
