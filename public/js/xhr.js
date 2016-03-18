@@ -22,10 +22,12 @@ var xhrverb = function(method , url, callback, object)
   {
     if(xhr.readyState == 4 && xhr.status < 400)
     {
+      if(callback)
+      {
         callback(xhr.responseText);
+      }
     }
   }
   xhr.setRequestHeader("Content-Type","application/json");
-  console.log(object);
   xhr.send(JSON.stringify(object));
 };

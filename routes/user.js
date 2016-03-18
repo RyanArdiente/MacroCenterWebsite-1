@@ -101,7 +101,7 @@ router.post('/createuser', function(req, res, next)
   });
 });
 
-router.get('/login', function(req, res, next)
+router.get('/signin', function(req, res, next)
 {
   console.log("in user/login");
   request('http://localhost:8080/MacroCenter/rest/login', function (error, response, body)

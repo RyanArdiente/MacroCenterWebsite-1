@@ -23,4 +23,5 @@ var createUserResults = function(data){
     creationResults.innerHTML="";
     var json = JSON.parse(data);
     creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
+    xhrverb("PUT", "../login", undefined, json);
 }
