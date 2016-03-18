@@ -1,8 +1,41 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#container1{
+  padding: 0;
+}
+
+#container2{
+  padding: 0;
+}
+
+#container3{
+  background-color: lightgrey;
+}
+
+#navSearchBar{
+  padding-top: 4.5%;
+}
+
+
+#phone_help{
+    padding-top: 1%;
+}
+
+#login_cart{
+  padding-top: 4%;
+}
+
+#cartCard{
+  padding-top: 2%;
+  background-color: lightgrey;
+}
+
+#signUpDiv{
+  padding-top: 2.5%;
 }

@@ -27,24 +27,25 @@ var request = require('request');
 //   }
 // });
 
-router.get('/', function(req, res, next)
-{
+router.get('/', function(req, res, next) {
   console.log("here");
-  request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
-  {
-    if (!error && response.statusCode == 200)
-    {
+  request('http://localhost:8080/MacroCenter/rest/user', function(error, response, body) {
+    console.log(JSON.parse(body));
+    if (!error && response.statusCode == 200) {
       // console.log(body) // Show the HTML for the Google homepage.
       // res.render('user', body);
       var users = JSON.parse(body);
-      console.log(users);
-      res.render('user', {page : {
-        header : "user",
-        title : "test",
-        user : users
-      }
-      // res.send(body);
-    });
+      console.log("inside if");
+      res.render('user', {
+        page: {
+
+          header: "user",
+          title: "test",
+          user: users
+        }
+        // res.send(body);
+      });
+    
     }
   });
 });
