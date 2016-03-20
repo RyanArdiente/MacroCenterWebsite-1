@@ -27,13 +27,13 @@ var request = require('request');
 //   }
 // });
 
-<<<<<<< HEAD
-router.get('/', function(req, res, next) {
-  console.log("here");
-  request('http://localhost:8080/MacroCenter/rest/user', function(error, response, body) {
-    console.log(JSON.parse(body));
-    if (!error && response.statusCode == 200) {
-=======
+// <<<<<<< HEAD
+// router.get('/', function(req, res, next) {
+//   console.log("here");
+//   request('http://localhost:8080/MacroCenter/rest/user', function(error, response, body) {
+//     console.log(JSON.parse(body));
+//     if (!error && response.statusCode == 200) {
+// =======
 router.get('/', function(req, res, next)
 {
   console.log("in user/");
@@ -115,9 +115,7 @@ router.get('/signin', function(req, res, next)
   {
     if (!error && response.statusCode == 200)
     {
->>>>>>> 95ee69cf6579539d66ac71fb90ebbdb652d7a9a0
-      // console.log(body) // Show the HTML for the Google homepage.
-      // res.render('user', body);
+
       var users = JSON.parse(body);
       console.log("inside if");
       res.render('user', {
