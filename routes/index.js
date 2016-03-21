@@ -5,23 +5,47 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   // res.render('index');
   // res.render('index', { title: 'Express' });
-  res.render('index', {page : {
-    welcomeHeader : "Welcome ",
-    title : "index",
-    links :  [
-      {
-        name : "link1"
-      },
-      {
-        name : "link2"
-      },
-      {
-        name : "link3"
-      }
-    ]
+  console.log(res.session.user);
+  if (res.session.user)
+  {
+    res.render('index', {page : {
+      welcomeHeader : "Welcome "+req.session.name,
+      title : "index",
+      links :  [
+        {
+          name : "link1"
+        },
+        {
+          name : "link2"
+        },
+        {
+          name : "link3"
+        }
+      ]
+    }
+    // res.send(body);
+    });
   }
-  // res.send(body);
-});
+  else
+  {
+    res.render('index', {page : {
+      welcomeHeader : "Welcome ",
+      title : "index",
+      links :  [
+        {
+          name : "link1"
+        },
+        {
+          name : "link2"
+        },
+        {
+          name : "link3"
+        }
+      ]
+    }
+    // res.send(body);
+  });
+  }
 });
 
 module.exports = router;

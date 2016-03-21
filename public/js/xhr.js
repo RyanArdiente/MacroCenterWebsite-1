@@ -1,4 +1,4 @@
-var xhrget = function(method,url, callback){
+var xhrget = function(method, url, callback){
 var xhr = new XMLHttpRequest();
 xhr.open(method, url);
 xhr.onreadystatechange = function(){
