@@ -17,9 +17,15 @@ router.put("/", function(req,res)
 {
 	console.log("logging in");
 	console.log(req.body.email);
+	console.log(req.body.name);
 	console.log("logged in successfully");
+
   var email =  req.body.email;
+  var name =  req.body.name;
+  var id =  req.body.id;
 	req.session.user = email;
+	req.session.name = name;
+	req.session.id = id;
   res.render('index');
 });
 
@@ -27,7 +33,10 @@ router.get("/logout", function(req,res)
 {
 	console.log("logged out");
 	req.session.user = null;
-	res.render("index.html");
+	req.session.name = null;
+	req.session.id = null;
+	delete req.session.user;
+	res.render("index");
 });
 
 router.use(session({
@@ -36,13 +45,6 @@ router.use(session({
 	secret : credentials.cookieSecret,
 	key : "user"
 }));
-
-router.get("/removeSession", function(req,res)
-{
-	console.log("removing session");
-	delete req.session.user;
-	res.render("index.html");
-});
 
 router.get("/newError", function(req,res)
 {

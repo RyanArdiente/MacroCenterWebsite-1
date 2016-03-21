@@ -57,79 +57,38 @@ router.get('/', function(req, res, next)
   });
 });
 
-router.get('/createuser', function(req, res, next) {
-  // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
-  // {
-  //   if (!error && response.statusCode == 200)
-  //   {
-  // console.log(body) // Show the HTML for the Google homepage.
-  // res.render('user', body);
-  // var users = JSON.parse(body);
-  res.render('createuser', {
-    page: {
-      header: "<h1>this is a header</h1>",
-      title: "create test",
-      script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-      script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
-    }
-    // res.send(body);
-  });
-  //}
-});
-
-
-router.post('/createuser', function(req, res, next)
+router.get('/createuser', function(req, res, next)
 {
-  console.log("in user/createUser");
-  var obj = req.body;
-  // request.post('http://localhost:8080/MacroCenter/rest/createUser', function (error, response, body)
-  request.post('http://localhost:8080/MacroCenter/rest/createUser', {form :{body:obj}}, function (error, response, body)
+  console.log("get createuser");
+  // console.log(res);
+  // welcomeHeader.innHTML="Sign Up";
+  res.render('createuser',
   {
-    // console.log(obj);
-    console.log(response.statusCode);
-    // if (!error && response.statusCode < 400)
-    if (!error && response.statusCode == 200)
+    page:
     {
-      console.log("passed");
-      // console.log(body) // Show the HTML for the Google homepage.
-      // res.render('user', body);
-      var users = JSON.parse(body);
-      console.log("users");
-      res.render('createuser', {  page: {
-          header: "<h1>this is a header</h1>",
-          title: "create test",
-          script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-          script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
-        }
-      // res.send(body);
-    });
+      welcomeHeader: "Sign Up",
+      title: "get create user",
+      script : "<script  type='text/javascript' src='../js/createuser.js'></script>"
     }
-    // console.log();
-  });
+  }
+  );
 });
 
 router.get('/signin', function(req, res, next)
 {
-  console.log("in user/login");
-  request('http://localhost:8080/MacroCenter/rest/login', function (error, response, body)
+  console.log("get loginUser");
+  // console.log(res);
+  // welcomeHeader.innHTML="Sign Up";
+  res.render('loginUser',
   {
-    if (!error && response.statusCode == 200)
+    page:
     {
-
-      var users = JSON.parse(body);
-      console.log("inside if");
-      res.render('user', {
-        page: {
-
-          header: "user",
-          title: "test",
-          user: users
-        }
-        // res.send(body);
-      });
-    
+      welcomeHeader: "Login",
+      title: "get login",
+      script : "<script  type='text/javascript' src='../js/loginClient.js'></script>"
     }
-  });
+  }
+  );
 });
 
 module.exports = router;

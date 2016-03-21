@@ -1,14 +1,20 @@
 var xhrget = function(method,url, callback, obj){
   console.log("in get ajax function");
+
 var xhr = new XMLHttpRequest();
 xhr.open(method, url);
 xhr.onreadystatechange = function(){
   if(xhr.readyState == 4 && xhr.status < 400)
   {
+
     var tempData = xhr.response;
     console.log("response  from tomcat :" + tempData);
       callback(tempData);
       console.log("after callback, in xhr.js");
+    if(callback)
+    {
+      callback(xhr.responseText);
+    }
   }
 };
   xhr.send(null);
