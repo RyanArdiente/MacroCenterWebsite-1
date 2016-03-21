@@ -18,7 +18,7 @@ router.put("/", function(req,res)
 	console.log("logging in");
 	console.log(req.body.email);
 	console.log("logged in successfully");
-  var email =  req.body.email
+  var email =  req.body.email;
 	req.session.user = email;
   res.render('index');
 });

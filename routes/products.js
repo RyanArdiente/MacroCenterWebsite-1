@@ -8,9 +8,10 @@ var app = express();
 // });
 router.get('/', function(req, res, next)
 {
+
       res.render('product', {page : {
-        header : "header",
-        title : "test",
+        header : "testProduct",
+        title : "testPro",
         products :  [
           {
             name : "test1",

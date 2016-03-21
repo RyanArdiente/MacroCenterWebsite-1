@@ -1,5 +1,5 @@
 window.onload = function(){
-  createuser.addEventListener("click", sendCreateForm)
+  createuser.addEventListener("click", sendCreateForm);
   console.log("LOADED");
 };
 var sendCreateForm = function(){
@@ -16,12 +16,12 @@ var sendCreateForm = function(){
   username.value="";
   password.value="";
 
-  xhrverb("POST", "http://localhost:8080/MacroCenter/rest/createUser", createUserResults, json)
+  xhrverb("POST", "http://localhost:8080/MacroCenter/rest/createUser", createUserResults, json);
 
-}
+};
 var createUserResults = function(data){
     creationResults.innerHTML="";
     var json = JSON.parse(data);
     creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
     xhrverb("PUT", "../login", undefined, json);
-}
+};
