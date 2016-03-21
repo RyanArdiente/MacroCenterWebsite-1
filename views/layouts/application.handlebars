@@ -4,7 +4,7 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
 	<title>{{{page.title}}}</title>
 </head>
 
@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-12" id="login_cart">
 							<div class="col-md-6" id="signUpDiv">
-								<button type="button" class="btn btn-secondary">Sign Up</button>
+								<a href="/user/createuser" type="button" class="btn btn-secondary" id="signUpUser">Sign Up</a>
 								|
 								<button type="button" class="btn btn-secondary">Login</button>
 							</div>
@@ -56,7 +56,7 @@
 <!-- ******************** Nav2 ******************** -->
 
 				<div class="col-md-12 bg-primary">
-					<h1>this guy</h1>
+					<h1 id="welcomeHeader">{{page.welcomeHeader}}</h1>
 				</div>
 
 <!-- ******************** Nav3 ******************** -->
@@ -85,7 +85,7 @@
 	<div class="container">
 		{{{body}}}
 	</div>
-	
+
 
 <nav class="navbar-default navbar-fixed-bottom navbar-dark bg-primary">
         <div class="container-fluid">
@@ -99,7 +99,7 @@
                         <p>Privacy and Security</p>
                         <p>Feedback</p>
                     </div>
-                    
+
                 </div>
                 <div class="col-sm-4 text-center"id ="footerCol2">
                     <h5 id='footer-header'> My Account</h3>
@@ -124,7 +124,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/tether/1.2.0/tether.min.js"></script>
-
+	<script src="../js/applicationJsMain.js"></script>
+	<script  type='text/javascript' src='../js/xhr.js'></script>
+	{{{page.script}}}
 
 
 

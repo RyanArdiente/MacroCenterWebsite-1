@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   // res.render('index');
   // res.render('index', { title: 'Express' });
   res.render('index', {page : {
-    header : "header",
+    welcomeHeader : "Welcome ",
     title : "index",
     links :  [
       {

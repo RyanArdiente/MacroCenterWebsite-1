@@ -57,30 +57,27 @@ router.get('/', function(req, res, next)
   });
 });
 
-router.get('/createuser', function(req, res, next) {
-  // request('http://localhost:8080/MacroCenter/rest/user', function (error, response, body)
-  // {
-  //   if (!error && response.statusCode == 200)
-  //   {
-  // console.log(body) // Show the HTML for the Google homepage.
-  // res.render('user', body);
-  // var users = JSON.parse(body);
-  res.render('createuser', {
-    page: {
-      header: "<h1>this is a header</h1>",
-      title: "create test",
-      script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-      script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
+router.get('/createuser', function(req, res, next)
+{
+  console.log("get createuser");
+  // console.log(res);
+  // welcomeHeader.innHTML="Sign Up";
+  res.render('createuser',
+  {
+    page:
+    {
+      welcomeHeader: "Sign Up",
+      title: "get create user",
+      script : "<script  type='text/javascript' src='../js/createuser.js'></script>"
     }
-    // res.send(body);
-  });
-  //}
+  }
+  );
 });
 
 
 router.post('/createuser', function(req, res, next)
 {
-  console.log("in user/createUser");
+  console.log("post createUser");
   var obj = req.body;
   // request.post('http://localhost:8080/MacroCenter/rest/createUser', function (error, response, body)
   request.post('http://localhost:8080/MacroCenter/rest/createUser', {form :{body:obj}}, function (error, response, body)
@@ -97,9 +94,8 @@ router.post('/createuser', function(req, res, next)
       console.log("users");
       res.render('createuser', {  page: {
           header: "<h1>this is a header</h1>",
-          title: "create test",
-          script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-          script2 : "<script  type='text/javascript' src='../js/createuser.js'></script>"
+          title: "post create user",
+          script : "<script  type='text/javascript' src='../js/createuser.js'></script>"
         }
       // res.send(body);
     });
@@ -127,7 +123,7 @@ router.get('/signin', function(req, res, next)
         }
         // res.send(body);
       });
-    
+
     }
   });
 });
