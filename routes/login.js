@@ -9,6 +9,7 @@ var session = require("express-session");
 
 router.use(cookieParser(credentials.cookieSecret));
 
+
 router.use(session({
   resave: false,
   saveUninitialized: false,
