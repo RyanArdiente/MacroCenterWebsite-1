@@ -12,8 +12,8 @@ router.get('/', function(req, res, next) {
   // console.log(req);
   res.render('product', {
     page: {
-      header: "productget",
-      title: "testPro",
+      header: "Products",
+      // title: "testPro",
 
       script: "<script  type='text/javascript' src='../js/productClient.js'></script>",
       // script1: "<script  type='text/javascript' src='../js/xhr.js'></script>"
@@ -37,7 +37,7 @@ router.get('/:id', function(req, res, next) {
     console.log("INside requst to java Data is  " + product + " and id is " + product.id);
     res.render('product', {
       page: {
-        header: "productget",
+        header: "Product",
         product: product,
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
@@ -57,7 +57,7 @@ router.get('/allProducts', function(req, res, next) {
     console.log("Inside requst to java Data is  " + product + " and id is " + product.id);
     res.render('product', {
       page: {
-        header: "productget",
+        header: "Products",
         product: product,
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
@@ -77,8 +77,8 @@ router.get('/category/:category', function(req, res, next) {
     console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
     res.render('product', {
       page: {
-        title: "Cat Test",
-        header: "Cat Test",
+        // title: "Products",
+        header: "Products",
         product: product,
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
@@ -101,8 +101,8 @@ router.get('/search/:id', function(req, res, next) {
     if (product) {
       res.render('product', {
         page: {
-          title: "Cat Test",
-          header: "Cat Test",
+          // title: "Cat Test",
+          header: "Products",
           product: product,
           // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
           script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
@@ -133,7 +133,8 @@ router.post('/:obj', function(req, res, next) {
   // var request = require('request');
   request('http://www.google.com/' + obj, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log(body) // Show the HTML for the Google homepage.
+      console.log(body);
+       // Show the HTML for the Google homepage.
       res.send(body);
     }
   });
