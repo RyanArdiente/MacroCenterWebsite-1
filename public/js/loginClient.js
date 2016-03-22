@@ -24,8 +24,6 @@ var loginResults = function(data){
     console.log(json.id);
     if (json.id)
     {
-      loginResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
-      welcomeHeader.innerHTML="Wecome "+json.name;
       xhrverb("POST", "../login", undefined, json);
       //xhrget("GET", "../", undefined);
       window.location = "../";

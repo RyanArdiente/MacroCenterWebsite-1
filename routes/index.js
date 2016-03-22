@@ -23,10 +23,10 @@ router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
   console.log("in render index");
   console.log(req.session.user);
-  if (req.session)
+  if (req.session.user)
   {
     res.render('index', {page : {
-      welcomeHeader: req.session.user ,
+      welcomeHeader: "Welcome " + req.session.user ,
       title : "index",
       links :  [
         {

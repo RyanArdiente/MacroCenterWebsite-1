@@ -22,18 +22,12 @@ var createUserResults = function(data){
     welcomeHeader.innerHTML="";
     var json = JSON.parse(data);
 
-    creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
-    xhrverb("PUT", "../login", undefined, json);
-};
-
     console.log("in create user");
     console.log(json.id);
     if (json.id)
     {
       creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
-      welcomeHeader.innerHTML="Wecome "+json.name;
       xhrverb("POST", "../login", undefined, json);
-      // xhrget("GET", "../", undefined);
       window.location = "../";
     }
     else
