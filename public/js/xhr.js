@@ -8,6 +8,7 @@ var xhrget = function(method,url, callback, obj)
   {
 
     if(xhr.readyState == 4 && xhr.status < 400)
+
     {
       var tempData = xhr.response;
       // console.log("response  from tomcat :" + tempData);

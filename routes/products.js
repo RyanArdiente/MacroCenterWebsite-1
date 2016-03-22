@@ -44,8 +44,10 @@ res.render('product', {
     product: testProduct,
 
 
+
     // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
     script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+
   }
   // res.send(body);
 });
@@ -95,7 +97,39 @@ router.get('/category/:category', function(req, res, next) {
   console.log("Data is  " +testProduct + " and id is " + testProduct.id);
 });
 
+router.get('/search/:id', function(req, res, next) {
+  console.log("inside search route");
+  var searchTerm = req.params.id;
+  var testProduct = {};
+  var query = "http://localhost:8080/MacroCenter/rest/search/"+searchTerm ;
+  console.log("server route search query is : "+query);
+  request(query, function(error, r, body)
+  {
+    testProduct = (JSON.parse(body));
+    // console.log("Inside requst to java Data is  " +testProduct + " and id is " + testProduct[0].id);
 
+    if(testProduct)
+    {
+    res.render('product',
+    {
+      page:
+      {
+        title : "Cat Test",
+        header: "Cat Test",
+        product: testProduct,
+        // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
+        script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+    }
+  });
+  }
+  else
+
+  {
+    console.log("product not found");
+  }
+});
+  // console.log("Data is  " +testProduct + " and id is " + testProduct.id);
+});
 
 
 router.get('/Review', function(req, res, next) {
