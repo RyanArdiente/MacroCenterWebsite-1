@@ -47,21 +47,21 @@ window.onload = function() {
 
 
   var searchButton = document.getElementById("searchButton");
+  console.log(searchButton);
   searchButton.addEventListener("click", searchProduct);
-
-  var searchProduct = function(e) {
+function searchProduct() {
 
     console.log("inside search event Listener");
-    e.preventDefault();
-    var search = document.getElementById("searchField").value;
+    // e.preventDefault();
+    var find= document.getElementById("searchField").value;
 
-    console.log(search);
+    console.log(find);
     var url = "";
-    url = "/products/search/" + search;
+    url = "/products/search/" + find;
     console.log(" url before redirecting is : " + url);
-    window.location = url;
+    window.location = "/products/search/gate";
     // window.location="/products";
-    search.innerHTML = " ";
+    find.innerHTML = " ";
   };
 
 
