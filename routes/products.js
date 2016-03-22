@@ -52,8 +52,6 @@ res.render('product', {
     header: "testProductget",
     // title : "testPro",
     product: testProduct,
-
-
     script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
     script2: "<script  type='text/javascript' src='../js/productClient.js'></script>"
   }
