@@ -6,11 +6,7 @@ var xhrget = function(method,url, callback, obj)
   xhr.open(method, url);
   xhr.onreadystatechange = function()
   {
-<<<<<<< HEAD
-    if(callback)
-=======
     if(xhr.readyState == 4 && xhr.status < 400)
->>>>>>> 0ba6a4fa24dfd020c8517e661db034ddceeaea28
     {
       var tempData = xhr.response;
       // console.log("response  from tomcat :" + tempData);
