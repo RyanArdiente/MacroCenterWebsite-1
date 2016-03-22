@@ -2,7 +2,7 @@ window.onload = function() {
   console.log("LOADED product.js");
   // loadProduct();
   // require("../routes/product");
-  powerSupply.addEventListener("click", loadProduct);
+  // powerSupply.addEventListener("click", loadProduct);
 };
 var powerSupply = document.getElementById("powerSupply");
 
