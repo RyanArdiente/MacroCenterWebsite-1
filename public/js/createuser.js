@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 window.onload = function(){
   createuser.addEventListener("click", sendCreateForm);
   console.log("LOADED");
@@ -46,4 +45,3 @@ var createUserResults = function(data){
       creationResults.innerHTML = "Error: "+json.name;
     }
 }
->>>>>>> 6b48fde99f110e1b79081b9c00e6073551d9b826
