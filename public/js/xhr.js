@@ -1,17 +1,27 @@
-var xhrget = function(method,url, callback, obj){
-  console.log("in get ajax function");
-
-var xhr = new XMLHttpRequest();
-xhr.open(method, url);
-xhr.onreadystatechange = function(){
-  if(xhr.readyState == 4 && xhr.status < 400)
+console.log("in xhr loaded xhr ajax function");
+var xhrget = function(method,url, callback, obj)
+{
+  console.log("in get ajax call");
+  var xhr = new XMLHttpRequest();
+  xhr.open(method, url);
+  xhr.onreadystatechange = function()
   {
+<<<<<<< HEAD
     if(callback)
+=======
+    if(xhr.readyState == 4 && xhr.status < 400)
+>>>>>>> 0ba6a4fa24dfd020c8517e661db034ddceeaea28
     {
-      callback(xhr.responseText);
+      var tempData = xhr.response;
+      // console.log("response  from tomcat :" + tempData);
+        // callback(tempData);
+        console.log("after callback, in xhr.js");
+      if(callback)
+      {
+        callback(xhr.responseText);
+      }
     }
-  }
-};
+  };
   xhr.send(null);
 };
 

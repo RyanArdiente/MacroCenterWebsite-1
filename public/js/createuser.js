@@ -1,4 +1,3 @@
-
 var sendCreateForm = function(){
   var name = document.getElementById("createUserName");
   var username = document.getElementById("createUserUsername");
