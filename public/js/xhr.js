@@ -20,6 +20,7 @@ var xhrverb = function(method , url, callback, object)
   console.log(callback);
   console.log(object);
   var xhr = new XMLHttpRequest();
+
   xhr.open(method, url);
   xhr.onreadystatechange = function()
   {
@@ -27,6 +28,7 @@ var xhrverb = function(method , url, callback, object)
     {
       if(callback)
       {
+        console.log("in callback");
         callback(xhr.responseText);
       }
     }

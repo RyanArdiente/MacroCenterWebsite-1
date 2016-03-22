@@ -26,7 +26,7 @@ var createUserResults = function(data){
     {
       creationResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
       welcomeHeader.innerHTML="Wecome "+json.name;
-      xhrverb("PUT", "../login", undefined, json);
+      xhrverb("POST", "../login", undefined, json);
       // xhrget("GET", "../", undefined);
       window.location = "../";
     }

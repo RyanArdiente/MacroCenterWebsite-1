@@ -56,7 +56,13 @@
 <!-- ******************** Nav2 ******************** -->
 
 				<div class="col-md-12 bg-primary">
-					<h1 id="welcomeHeader">{{page.welcomeHeader}}</h1>
+
+						{{#if page.welcomeHeader }}
+						<h1 id="welcomeHeader">	{{page.welcomeHeader}}	</h1>
+						{{else}}
+					<h1 id="welcomeHeader">	Welcome</h1>
+						{{/if}}
+
 				</div>
 
 <!-- ******************** Nav3 ******************** -->

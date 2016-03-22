@@ -1,15 +1,32 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var credentials = require('../.credentials.js');
+var session = require("express-session");
+
+
+
+router.use(cookieParser(credentials.cookieSecret));
+
+router.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: credentials.cookieSecret,
+  key: "user"
+}));
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index');
   // res.render('index', { title: 'Express' });
-  console.log(res.session.user);
-  if (res.session.user)
+  console.log("in render index");
+  console.log(req.session.user);
+  if (req.session)
   {
     res.render('index', {page : {
-      welcomeHeader : "Welcome "+req.session.name,
+      welcomeHeader: req.session.user ,
       title : "index",
       links :  [
         {
@@ -29,7 +46,6 @@ router.get('/', function(req, res, next) {
   else
   {
     res.render('index', {page : {
-      welcomeHeader : "Welcome ",
       title : "index",
       links :  [
         {

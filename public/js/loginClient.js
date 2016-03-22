@@ -7,15 +7,18 @@ var sendLoginForm = function(){
       email : username.value,
       password : password.value
   };
+  console.log(json);
 
   username.value="";
   password.value="";
 
-  xhrverb("PUT", "http://localhost:8080/MacroCenter/rest/login", loginResults, json)
+  xhrverb("POST", "http://localhost:8080/MacroCenter/rest/login", loginResults, json)
 };
+
 var loginResults = function(data){
     loginResults.innerHTML="";
     welcomeHeader.innerHTML="";
+    console.log(data + " this is the data object");
     var json = JSON.parse(data);
     console.log("in login user");
     console.log(json.id);
@@ -23,8 +26,8 @@ var loginResults = function(data){
     {
       loginResults.innerHTML = "Name: "+json.name + " Email/username: " + json.email;
       welcomeHeader.innerHTML="Wecome "+json.name;
-      xhrverb("PUT", "../login", undefined, json);
-      // xhrget("GET", "../", undefined);
+      xhrverb("POST", "../login", undefined, json);
+      //xhrget("GET", "../", undefined);
       window.location = "../";
     }
     else
