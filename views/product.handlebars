@@ -5,8 +5,10 @@
 </div>
 <h3>{{page.title}}</h3>
 {{#each page.product}}
-  {{name}}
+  <a href ="/products/{{{id}}}">{{name}}</a>
   <p></p>
 {{/each}}
+{{page.product.name}}
+<!-- {{{page.script3}}} -->
 {{{page.script}}}
 </div>
