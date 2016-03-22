@@ -1,7 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var request = require('request');
+var cookieParser = require('cookie-parser');
+var credentials = require('../.credentials.js');
+var session = require("express-session");
 
+
+
+router.use(cookieParser(credentials.cookieSecret));
+
+router.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: credentials.cookieSecret,
+  key: "user"
+}));
 /* GET users listing. */
 // router.get('/', function(req, res, next)
 // {
@@ -86,6 +99,21 @@ router.get('/signin', function(req, res, next)
       welcomeHeader: "Login",
       title: "get login",
       script : "<script  type='text/javascript' src='../js/loginClient.js'></script>"
+    }
+  }
+  );
+});
+router.get('/account', function(req, res, next)
+{
+  res.render('useraccount',
+  {
+    page:
+    {
+      welcomeHeader: "Account Settings",
+      userName: req.session.name,
+      userUsername: req.session.user,
+      title: "Account Settings",
+      script : "<script  type='text/javascript' src='../js/accountsettings.js'></script>"
     }
   }
   );

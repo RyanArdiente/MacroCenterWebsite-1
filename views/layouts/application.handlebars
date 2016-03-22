@@ -47,6 +47,9 @@
 								<button type="button" class="btn btn-secondary" id="signUpUser">Sign Up</button>
 								|
 								<button type="button" class="btn btn-secondary" id="loginUserBtn">Login</button>
+								<button type="button" class="btn btn-secondary" id="accsetUserBtn">Acc Set</button>
+								|
+								<button type="button" class="btn btn-secondary" id="logoutUserBtn">Logout</button>
 							</div>
 							<div class="col-md-6">
 								<button type="button" class="btn btn-secondary" id="cartCard"><i class="zmdi zmdi-shopping-cart zmdi-hc-2x"></i> My Cart</button>
@@ -58,7 +61,13 @@
 <!-- ******************** Nav2 ******************** -->
 
 				<div class="col-md-12 bg-primary">
-					<h1 id="welcomeHeader">{{page.welcomeHeader}}</h1>
+
+						{{#if page.welcomeHeader }}
+						<h1 id="welcomeHeader">	{{page.welcomeHeader}}	</h1>
+						{{else}}
+					<h1 id="welcomeHeader">	Welcome</h1>
+						{{/if}}
+
 				</div>
 
 <!-- ******************** Nav3 ******************** -->
