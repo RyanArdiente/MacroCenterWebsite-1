@@ -4,15 +4,11 @@
 <div class = "productCon" id="product">
 </div>
 <h3>{{page.title}}</h3>
+{{#each page.product}}
+  {{id}}
+  <p></p>
+{{/each}}
 
-<h3>{{page.product}}</h3>
-<h3>{{page.product.id}}</h3>
-<h3>{{{page.product.id}}}</h3>
-
-<h3>{{page.product.description}}</h3>
-<h3>{{{page.product.description}}}</h3>
-
-
-  {{{page.script}}}
-  {{{page.script2}}}
+<!-- {{{page.script3}}} -->
+{{{page.script}}}
 </div>
