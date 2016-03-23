@@ -28,7 +28,6 @@ router.get('/', function(req, res, next) {
 //   res.render('about', {page : about.getAbout()});
 
 
-<<<<<<< HEAD
 router.get('/test', function(req, res, next) {
   console.log("inside testproduct route");
 
