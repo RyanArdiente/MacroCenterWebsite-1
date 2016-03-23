@@ -32,6 +32,7 @@ window.onload = function() {
   // where handlebars views checks go
   var createuser = document.getElementById("createuser");
   var loginUser = document.getElementById("loginUser");
+  var addToCart = document.getElementById("addToCart");
 
   var saveAccountEdit = document.getElementById("saveAccountEdit");
   var deleteAccount = document.getElementById("deleteAccount");
@@ -43,6 +44,9 @@ window.onload = function() {
   if (loginUser) {
     loginUser.addEventListener("click", sendLoginForm);
     // welcomeHeader.innHTML="Sign Up";
+  }
+  if(addToCart){
+    addToCart.addEventListener("click", addProductToCart)
   }
 
 

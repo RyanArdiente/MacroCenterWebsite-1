@@ -8,6 +8,8 @@ router.get('/', function(req, res, next) {
   res.render('about', {
     page: {
       header: "About Macro Center",      // title: "aboutPage",
+      description : "",
+      employeesLink : "<a href = \"/about/employee\">Meet out employees!</a>",
       script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>",
     }
   });
@@ -23,7 +25,7 @@ router.get('/employee', function(req, res, next) {
     res.render('about', {
       page: {
         header: "employee",
-        product: employee,
+        employee: employee,
         script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>"
       }
     });
