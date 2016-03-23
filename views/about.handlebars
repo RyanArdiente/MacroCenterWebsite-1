@@ -1,11 +1,14 @@
+<title>{{page.title}}</title>
 <h1>{{page.header}}</h1>
 <div>
 
 <div id="about">
 </div>
-{{#each page.product}}
-  {{id}}
-  <p></p>
+{{page.description}}
+{{{page.employeesLink}}}
+{{{page.info}}}
+{{#each page.employee}}
+  <br>
 {{/each}}
 
 {{{page.script}}}

@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
   res.render('product', {
     page: {
       header: "Products",
+      title: "Products",
       script: "<script  type='text/javascript' src='../js/productClient.js'></script>",
     }
   });
@@ -32,7 +33,7 @@ router.get('/test', function(req, res, next) {
     res.render('product', {
       page: {
         header: "testProductget",
-        // title : "testPro",
+        title : "Test Product",
         product: testProduct,
 
 
@@ -58,8 +59,9 @@ router.get('/:id', function(req, res, next) {
     console.log("INside requst to java Data is  " + product + " and id is " + product.id);
     res.render('product', {
       page: {
-        header: "Product",
+        header: "Products",
         product: product,
+        title: "Products",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
     });
@@ -80,6 +82,7 @@ router.get('/allProducts', function(req, res, next) {
       page: {
         header: "Products",
         product: product,
+        title: "Products",
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
@@ -102,7 +105,9 @@ router.get('/category/:category', function(req, res, next) {
     res.render('product', {
       page: {
         header: "Products",
+        title: "Products",
         product: myproduct,
+
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
     });
@@ -123,7 +128,7 @@ router.get('/search/:id', function(req, res, next) {
     if (product) {
       res.render('product', {
         page: {
-          // title: "Cat Test",
+          title: "Products",
           header: "Products",
           product: product,
           // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",

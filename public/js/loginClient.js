@@ -16,12 +16,13 @@ var sendLoginForm = function(){
 };
 
 var loginResults = function(data){
-    loginResults.innerHTML="";
+    loginResult.innerHTML="";
     welcomeHeader.innerHTML="";
     console.log(data + " this is the data object");
     var json = JSON.parse(data);
     console.log("in login user");
     console.log(json.id);
+    console.log(json);
     if (json.id)
     {
       xhrverb("POST", "../login", undefined, json);
@@ -30,6 +31,8 @@ var loginResults = function(data){
     }
     else
     {
-      loginResults.innerHTML = "Error: "+json.name;
+      console.log("error");
+      console.log("Error: "+ json.name);
+      loginResult.innerHTML = "Error: "+ json.name;
     }
 }

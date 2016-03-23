@@ -40,13 +40,7 @@ router.use(session({
 //   }
 // });
 
-// <<<<<<< HEAD
-// router.get('/', function(req, res, next) {
-//   console.log("here");
-//   request('http://localhost:8080/MacroCenter/rest/user', function(error, response, body) {
-//     console.log(JSON.parse(body));
-//     if (!error && response.statusCode == 200) {
-// =======
+
 router.get('/', function(req, res, next)
 {
   console.log("in user/");
@@ -61,7 +55,7 @@ router.get('/', function(req, res, next)
       res.render('user', {
         page: {
           header: "user",
-          title: "test",
+          title: "User",
           user: users
         }
         // res.send(body);
@@ -80,7 +74,7 @@ router.get('/createuser', function(req, res, next)
     page:
     {
       welcomeHeader: "Sign Up",
-      title: "get create user",
+      title: "Sign Up",
       script : "<script  type='text/javascript' src='../js/createuser.js'></script>"
     }
   }
@@ -97,7 +91,7 @@ router.get('/signin', function(req, res, next)
     page:
     {
       welcomeHeader: "Login",
-      title: "get login",
+      title: "Login",
       script : "<script  type='text/javascript' src='../js/loginClient.js'></script>"
     }
   }
@@ -105,6 +99,20 @@ router.get('/signin', function(req, res, next)
 });
 router.get('/account', function(req, res, next)
 {
+  console.log("in account");
+  if (res.session)
+  {
+    if(req.session.userid){
+      console.log("res.session.userid");
+      console.log(res.session.userid);
+    }
+    console.log("in the account settings");
+    console.log(res.session.userid);
+  }
+  else{
+    console.log("in else in account settings");
+
+  }
   res.render('useraccount',
   {
     page:

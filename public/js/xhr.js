@@ -6,7 +6,6 @@ var xhrget = function(method,url, callback, obj)
   xhr.open(method, url);
   xhr.onreadystatechange = function()
   {
-
     if(xhr.readyState == 4 && xhr.status < 400)
     {
       //var tempData = xhr.response;

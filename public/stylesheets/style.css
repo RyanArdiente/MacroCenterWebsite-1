@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -46,8 +47,24 @@ text-align: center;
 
 }
 
+#footerCol2 {
+text-align: center;
+
+}
+
+#footerCol3 {
+text-align: center;
+
+}
+
 #mainCard {
 
   background-color: #ffcc80;
 
+}
+#phoneNumber{
+  font-size: 80%;
+}
+#viewBody{
+   height: 120vh;
 }
