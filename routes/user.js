@@ -61,7 +61,7 @@ router.get('/', function(req, res, next)
       res.render('user', {
         page: {
           header: "user",
-          title: "test",
+          title: "User",
           user: users
         }
         // res.send(body);
@@ -80,7 +80,7 @@ router.get('/createuser', function(req, res, next)
     page:
     {
       welcomeHeader: "Sign Up",
-      title: "get create user",
+      title: "Sign Up",
       script : "<script  type='text/javascript' src='../js/createuser.js'></script>"
     }
   }
@@ -97,7 +97,7 @@ router.get('/signin', function(req, res, next)
     page:
     {
       welcomeHeader: "Login",
-      title: "get login",
+      title: "Login",
       script : "<script  type='text/javascript' src='../js/loginClient.js'></script>"
     }
   }
