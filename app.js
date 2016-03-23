@@ -15,6 +15,8 @@ var products = require("./routes/products");
 var shoppingCart = require("./routes/shoppingCart");
 var user = require("./routes/user");
 var login = require("./routes/login");
+var aboutPage = require("./routes/aboutServer");
+var helpPage = require("./routes/helpServer");
 
 
 // view engine setup
@@ -42,6 +44,8 @@ app.use('/products', products);
 app.use('/shoppingCart', shoppingCart);
 app.use('/user', user);
 app.use('/login', login);
+app.use('/about', aboutPage);
+app.use('/help', helpPage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

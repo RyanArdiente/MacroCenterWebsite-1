@@ -3,11 +3,12 @@
 
 <div class = "productCon" id="product">
 </div>
-<h3>{{page.title}}</h3>
+<!-- <h3>{{page.title}}</h3> -->
 {{#each page.product}}
-  {{.}}
-
+  <a href ="/products/{{{id}}}">{{name}}</a>
+  <p></p>
 {{/each}}
+{{page.product.name}}
 
 <button id="addToCart" type="button" value="{{page.product.id}}" class="btn btn-primary">Add to Cart</button>
 {{{page.script}}}

@@ -12,8 +12,10 @@ router.get('/', function(req, res, next) {
   // console.log(req);
   res.render('product', {
     page: {
-      header: "testProductget",
-      title: "testPro",
+
+      header: "Products",
+      // title: "testPro",
+
 
       script: "<script  type='text/javascript' src='../js/productClient.js'></script>",
       // script1: "<script  type='text/javascript' src='../js/xhr.js'></script>"
@@ -26,6 +28,7 @@ router.get('/', function(req, res, next) {
 //   res.render('about', {page : about.getAbout()});
 
 
+<<<<<<< HEAD
 router.get('/test', function(req, res, next) {
   console.log("inside testproduct route");
 
@@ -55,61 +58,85 @@ router.get('/test', function(req, res, next) {
   console.log("Data is  " + testProduct + " and id is " + testProduct.id);
 });
 
-router.get('/allProducts', function(req, res, next) {
-  console.log("inside all products route");
-  var testProduct = {};
-  request('http://localhost:8080/MacroCenter/rest/allProducts', function(error, r, body) {
-    testProduct = (JSON.parse(body));
-    console.log("Inside requst to java Data is  " + testProduct + " and id is " + testProduct.id);
+router.get('/:id', function(req, res, next) {
+  console.log("inside product route");
+  var productId = req.params.id;
+  console.log(productId);
+  var product = {};
+  var route = 'http://localhost:8080/MacroCenter/rest/product/' + productId;
+  request(route, function(error, r, body) {
+    product = (JSON.parse(body));
+    console.log("INside requst to java Data is  " + product + " and id is " + product.id);
     res.render('product', {
       page: {
-        header: "testProductget",
-        product: testProduct,
+        header: "Product",
+        product: product,
+        script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+      }
+    });
+  });
+  console.log("Data is  " + product + " and id is " + product.id);
+});
+
+
+
+
+router.get('/allProducts', function(req, res, next) {
+  console.log("inside all products route");
+  var product = {};
+  request('http://localhost:8080/MacroCenter/rest/allProducts', function(error, r, body) {
+    product = (JSON.parse(body));
+    console.log("Inside requst to java Data is  " + product + " and id is " + product.id);
+    res.render('product', {
+      page: {
+        header: "Products",
+        product: product,
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
     });
   });
-  console.log("Data is  " + testProduct + " and id is " + testProduct.id);
+
+  console.log("Data is  " + product + " and id is " + product.id);
 });
 router.get('/category/:category', function(req, res, next) {
   console.log("inside category route");
   var category = req.params.category;
-  var testProduct = {};
+  var product = {};
   var query = "http://localhost:8080/MacroCenter/rest/category/" + category;
   console.log("server route query: " + query);
   request(query, function(error, r, body) {
-    testProduct = (JSON.parse(body));
-    console.log("Inside requst to java Data is  " + testProduct + " and id is " + testProduct[0].id);
+    product = (JSON.parse(body));
+    console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
     res.render('product', {
       page: {
-        title: "Cat Test",
-        header: "Cat Test",
-        product: testProduct,
+        // title: "Products",
+        header: "Products",
+        product: product,
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
     });
   });
-  console.log("Data is  " + testProduct + " and id is " + testProduct.id);
+  console.log("Data is  " + product + " and id is " + product.id);
 });
 
 router.get('/search/:id', function(req, res, next) {
   console.log("inside search route");
   var searchTerm = req.params.id;
-  var testProduct = {};
+  var product = {};
   var query = "http://localhost:8080/MacroCenter/rest/search/" + searchTerm;
   console.log("server route search query is : " + query);
   request(query, function(error, r, body) {
-    testProduct = (JSON.parse(body));
-    // console.log("Inside requst to java Data is  " +testProduct + " and id is " + testProduct[0].id);
+    product = (JSON.parse(body));
+    // console.log("Inside requst to java Data is  " +product + " and id is " + product[0].id);
 
-    if (testProduct) {
+    if (product) {
       res.render('product', {
         page: {
-          title: "Cat Test",
-          header: "Cat Test",
-          product: testProduct,
+          // title: "Cat Test",
+          header: "Products",
+          product: product,
           // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
           script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
         }
@@ -120,7 +147,6 @@ router.get('/search/:id', function(req, res, next) {
       console.log("product not found");
     }
   });
-  // console.log("Data is  " +testProduct + " and id is " + testProduct.id);
 });
 
 
@@ -140,7 +166,8 @@ router.post('/:obj', function(req, res, next) {
   // var request = require('request');
   request('http://www.google.com/' + obj, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log(body) // Show the HTML for the Google homepage.
+      console.log(body);
+       // Show the HTML for the Google homepage.
       res.send(body);
     }
   });

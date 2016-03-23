@@ -1,7 +1,8 @@
 window.onload = function() {
   // where buttons go
-  console.log("inside application js Main")
+  console.log("inside application js Main");
   var signUpUser = document.getElementById("signUpUser");
+  var helpButton = document.getElementById("helpButton");
 
   var loginUserBtn = document.getElementById("loginUserBtn");
   var logoutUserBtn = document.getElementById("logoutUserBtn");
@@ -12,9 +13,10 @@ window.onload = function() {
     window.location = "/user/createuser";
   });
 
-
-  var loginUserBtn = document.getElementById("loginUserBtn");
-
+  helpButton.addEventListener("click", function() {
+    console.log("in event listener for help");
+    window.location = "/help";
+  });
   loginUserBtn.addEventListener("click", function() {
     console.log("in event listener for login");
     window.location = "/user/signin";

@@ -19,7 +19,7 @@
 			<div class="container-fluid" id="container2">
 				<div class="col-md-12">
 					<div class="col-md-2">
-						<h1>Micro Center</h1>
+					<a href ="/" id="Home">	<h1>Macro Center</h1></a>
 					</div>
 					<div class="col-md-6" id="navSearchBar">
 						<form class="form-inline pull-md-right">
@@ -41,7 +41,7 @@
 									</p>
 								</div>
 							</div>
-							<button type="button" class="btn btn-secondary"><i class="zmdi zmdi-help zmdi-hc-2x"></i> Help</button>
+							<button type="button" class="btn btn-secondary" id="helpButton"><i class="zmdi zmdi-help zmdi-hc-2x"></i> Help</button>
 						</div>
 						<div class="col-md-12" id="login_cart">
 							<div class="col-md-6" id="signUpDiv">
@@ -110,34 +110,35 @@
 		{{{body}}}
 	</div>
 
+<!-- ******************** Footer ******************** -->
 
 <nav class="navbar-default navbar-fixed-bottom navbar-dark bg-primary">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" id ="footerCol1">
-                    <h5 id='footer-header'> Services </h3>
-                    <div class="col-sm-4" style="padding: 0 0 0 0px">
-                        <p>Deals</p>
-                        <p>Tracks an Order</p>
-                        <p>Return Policy</p>
-                        <p>Privacy and Security</p>
-                        <p>Feedback</p>
+                <div class="col-sm-4 text-center" id ="footerCol1">
+                    <h5 id='footer-header'>Services</h5>
+                    <div class="col-sm-4 " style="padding: 0 0 0 0px">
+                        <a href="">Deals</a><br>
+                      <a href="">Tracks an Order</a><br>
+                      <a href="">Return Policy</a><br>
+                      <a href="">Privacy and Security</a><br>
+                      <a href="">Feedback</a>
                     </div>
 
                 </div>
                 <div class="col-sm-4 text-center"id ="footerCol2">
-                    <h5 id='footer-header'> My Account</h3>
-                    <p>Login</p>
-                     <p>My Dashboard</p>
-                      <p>Address Book</p>
-                       <p>Wish List</p>
+                    <h5 id='footer-header'>My Account</h5>
+                  <a href="/user/signin">Login</a><br>
+                    <a href="">My Dashboard</a><br>
+                    <a href="">Address Book</a><br>
+                      <a href="">Wish List</a>
                 </div>
-                <div class="col-sm-4" id ="footerCol3">
-                    <h5 id='footer-header'> About</h3>
-                    <p>About Micro Center</p>
-                     <p>Awards/Ranking</p>
-                      <p>Hours and Location</p>
-                      <p>Careers</p>
+                <div class="col-sm-4 text-center" id ="footerCol3">
+                    <h5 id='footer-header'>About</h5>
+                  <a href="/about">About Micro Center</a><br>
+                    <a href="">Awards/Ranking</a><br>
+                    <a href="">Hours and Location</a><br>
+                    <a href="">Careers</a>
                 </div>
             </div>
         </div>
