@@ -42,7 +42,7 @@ router.get('/contact', function(req, res, next)
       page: {
         header: "Contact Us",
         title: "Contact Us",
-        info: "Address: 7400 East Orchard Road, Suite 1450N, Greenwood Village, CO, 80111 <a href = \"https://www.google.com/maps/place/7400+E+Orchard+Rd,+Greenwood+Village,+CO+80111/@39.6088518,-104.9050174,17z/data=!3m1!4b1!4m2!3m1!1s0x876c86ed5f85ee1b:0x38551d73b5335c2b?hl=en-US%22%20target=%22_blank\">Map</a><br>Phone: <a href=\"tel:+1-800-555-5555\">1-800-555-5555</a><hr>",
+        info: "Address: 7400 East Orchard Road, Suite 1450N, Greenwood Village, CO, 80111 <a href = \"https://www.google.com/maps/place/7400+E+Orchard+Rd,+Greenwood+Village,+CO+80111/@39.6088518,-104.9050174,17z/data=!3m1!4b1!4m2!3m1!1s0x876c86ed5f85ee1b:0x38551d73b5335c2b?hl=en-US%22%20target=%22_blank\" target=\"_blank\">Map</a><br>Phone: <a href=\"tel:+1-800-555-5555\">1-800-555-5555</a><hr>",
         directions: "Directions<br><br>North<br><br>> Take I-25 S to CO-88 W/E Belleview Ave.<br>> Take exit 199 from I-25 S> Take S Quebec St to E Orchard Rd in Greenwood Village<br>> Follow S Quebec St to E Orchard Rd in Greenwood Village<br><br>East<br><br>> Take I-70 W and I-225 S to CO-88 W/E Belleview Ave.<br>> Take exit 1A from I-225 S<br>> Take S Quebec St to E Orchard Rd in Greenwood Village<br><br>South<br><br>> Take I-25 N to E Orchard Rd in Greenwood Village.<br>> Take exit 198 from I-25 N<br>> Drive to E Orchard Rd<br><br>West<br><br>> Take US-285 N to CO-88 W/E Belleview Ave.<br>Take exit 199 from I-25 S<br>> Take S Quebec St to E Orchard Rd in Greenwood Village",
         script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>"
       }
