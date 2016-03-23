@@ -4,10 +4,15 @@
 
 <div id="about">
 </div>
-{{page.description}}<br>
+{{{page.description}}}
 {{{page.employeesLink}}}
+{{{page.contactLink}}}
 {{{page.info}}}
 {{#each page.employee}}
+  {{name}}
+  {{title}}
+  {{email}}
+  {{bio}}
   <br>
 {{/each}}
 
