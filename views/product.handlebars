@@ -5,10 +5,10 @@
 </div>
 <h3>{{page.title}}</h3>
 {{#each page.product}}
-  {{id}}
-  <p></p>
+  {{.}}
+
 {{/each}}
 
-<!-- {{{page.script3}}} -->
+<button id="addToCart" type="button" value="{{page.product.id}}" class="btn btn-primary">Add to Cart</button>
 {{{page.script}}}
 </div>
