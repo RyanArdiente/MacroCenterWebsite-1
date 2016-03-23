@@ -7,9 +7,9 @@ console.log("server side about.js route loaded");
 router.get('/', function(req, res, next) {
   res.render('about', {
     page: {
-      header: "About Macro Center",
       title: "About",
-      description : "",
+      header: "About Macro Center",
+      description : "Macro Center is an e-commerce website where you can purchase something for every one of your hardware and software needs. We give discounts to robots looking to further themselves.",
       employeesLink : "<a href = \"/about/employee\">Meet out employees!</a>",
       script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>",
     }
