@@ -12,19 +12,12 @@ router.get('/', function(req, res, next) {
   // console.log(req);
   res.render('product', {
     page: {
-
       header: "Products",
       title: "Products",
       script: "<script  type='text/javascript' src='../js/productClient.js'></script>",
-      // script1: "<script  type='text/javascript' src='../js/xhr.js'></script>"
     }
-    // res.send(body);
   });
-  // }
-  // });
 });
-//   res.render('about', {page : about.getAbout()});
-
 
 router.get('/test', function(req, res, next) {
   console.log("inside testproduct route");
@@ -101,23 +94,26 @@ router.get('/allProducts', function(req, res, next) {
 router.get('/category/:category', function(req, res, next) {
   console.log("inside category route");
   var category = req.params.category;
-  var product = {};
+  var myproduct = {};
   var query = "http://localhost:8080/MacroCenter/rest/category/" + category;
   console.log("server route query: " + query);
   request(query, function(error, r, body) {
-    product = (JSON.parse(body));
-    // console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
+    console.log("inside request category");
+    console.log(body);
+    myproduct = (JSON.parse(body));
+  //  console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
+
     res.render('product', {
       page: {
         header: "Products",
         title: "Products",
-        product: product,
-        // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
+        product: myproduct,
+
         script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
       }
     });
   });
-  console.log("Data is  " + product + " and id is " + product.id);
+  //console.log("Data is  " + product + " and id is " + product.id);
 });
 
 router.get('/search/:id', function(req, res, next) {
@@ -166,7 +162,7 @@ router.post('/:obj', function(req, res, next) {
   request('http://www.google.com/' + obj, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       console.log(body);
-       // Show the HTML for the Google homepage.
+      // Show the HTML for the Google homepage.
       res.send(body);
     }
   });

@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
@@ -60,4 +61,10 @@ text-align: center;
 
   background-color: #ffcc80;
 
+}
+#phoneNumber{
+  font-size: 80%;
+}
+#viewBody{
+   height: 120vh;
 }

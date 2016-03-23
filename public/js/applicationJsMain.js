@@ -1,34 +1,7 @@
 window.onload = function() {
   // where buttons go
   console.log("inside application js Main");
-  var signUpUser = document.getElementById("signUpUser");
-  var helpButton = document.getElementById("helpButton");
 
-  var loginUserBtn = document.getElementById("loginUserBtn");
-  var logoutUserBtn = document.getElementById("logoutUserBtn");
-  var accsetUserBtn = document.getElementById("accsetUserBtn");
-
-  signUpUser.addEventListener("click", function() {
-    console.log("in event listener for signup");
-    window.location = "/user/createuser";
-  });
-
-  helpButton.addEventListener("click", function() {
-    console.log("in event listener for help");
-    window.location = "/help";
-  });
-  loginUserBtn.addEventListener("click", function() {
-    console.log("in event listener for login");
-    window.location = "/user/signin";
-  });
-  logoutUserBtn.addEventListener("click", function() {
-    console.log("in event listener for logout");
-    window.location = "/login/logout";
-  });
-  accsetUserBtn.addEventListener("click", function() {
-    console.log("in event listener for account settings");
-    window.location = "/user/account";
-  });
   // where handlebars views checks go
   var createuser = document.getElementById("createuser");
   var loginUser = document.getElementById("loginUser");
