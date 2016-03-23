@@ -106,7 +106,7 @@ router.get('/category/:category', function(req, res, next) {
   console.log("server route query: " + query);
   request(query, function(error, r, body) {
     product = (JSON.parse(body));
-    console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
+    // console.log("Inside requst to java Data is  " + product + " and id is " + product[0].id);
     res.render('product', {
       page: {
         header: "Products",
