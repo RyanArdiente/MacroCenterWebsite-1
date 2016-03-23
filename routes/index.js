@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
   {
     res.render('index', {page : {
       welcomeHeader: "Welcome " + req.session.user ,
-      title : "index",
+      title : "Macro Center",
       links :  [
         {
           name : "link1"
@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
   else
   {
     res.render('index', {page : {
-      title : "index",
+      title : "Macro Center",
       links :  [
         {
           name : "link1"
