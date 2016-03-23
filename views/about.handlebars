@@ -1,4 +1,12 @@
 <title>{{page.title}}</title>
+<style>
+  table, td, th
+  {
+    border: 1px solid black;
+    text-align: center;
+    padding: 3px;
+  }
+</style>
 <h1>{{page.header}}</h1><hr>
 <div>
 
@@ -8,13 +16,23 @@
 {{{page.employeesLink}}}
 {{{page.contactLink}}}
 {{{page.info}}}
-{{#each page.employee}}
-  {{name}}
-  {{title}}
-  {{email}}
-  {{bio}}
-  <br>
-{{/each}}
-
+{{#if page.employee}}
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Email</th>
+      <th>Bio</th>
+    </tr>
+    {{#each page.employee}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{title}}</td>
+        <td>{{email}}</td>
+        <td>{{bio}}</td>
+      </tr>
+    {{/each}}
+  </table>
+{{/if}}
 {{{page.script}}}
 </div>
