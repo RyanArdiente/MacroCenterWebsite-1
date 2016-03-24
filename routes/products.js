@@ -133,7 +133,7 @@ router.get('/search/:id', function(req, res, next) {
           header: "Products",
           product: product,
           // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-          script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+          script: "<script type=\"text/javascript\" src=\"../js/productClient.js\"></script>"
         }
       });
     } else

@@ -52,7 +52,7 @@ router.get('/checkout/orderplaced', function(req, res, next)
         header: "Order Placed",
         title: "Order Placed",
         // cart: cart,
-        script: "<script  type='text/javascript' src='../js/orderplacedClient.js'></script>"
+        // script: "<script  type='text/javascript' src='../js/orderplacedClient.js'></script>"
       }
     });
 });

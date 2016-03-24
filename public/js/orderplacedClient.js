@@ -1,3 +1,3 @@
-indow.onload = function() {
+window.onload = function() {
   console.log("LOADED orderplacedClient.js");
 };
