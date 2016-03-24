@@ -18,6 +18,8 @@ router.use(session({
 }));
 
 router.post("/", function(req, res) {
+
+
   req.session.user = req.body.email;
 	req.session.userid = req.body.id;
 	req.session.name = req.body.name;
