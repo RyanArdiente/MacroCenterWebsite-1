@@ -23,6 +23,7 @@ router.post("/", function(req, res) {
 	req.session.name = req.body.user.name;
   req.session.address = req.body.address.address;
   req.session.type = req.body.address.type;
+
   res.render('index');
 });
 

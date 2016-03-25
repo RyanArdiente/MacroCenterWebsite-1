@@ -29,14 +29,25 @@ router.get('/Checkout', function(req, res, next)
   });
 });
 
+router.get("/signed",function(req, res, next) 
+{
+  console.log("creating cookie in shoppingCart route ");
+
+  res.cookie('testCookie', {test : "test"}, {signed : true});
+  console.log(req.signedCookies.testCookie);
+});
+
 router.post('/addToCart', function(req, res, next) {
+
+  if(req.session.user)
+  {
   console.log("inside addToCart in shoppingCart route");
   console.log(req.body.productId + " req body");
   console.log(req.session.userid);
   var json = {
     productId: req.body.productId,
     userId: req.session.userid
-  }
+  };
 
   request({
     url: 'http://localhost:8080/MacroCenter/rest/addToCart',
@@ -45,5 +56,32 @@ router.post('/addToCart', function(req, res, next) {
   } , function(error, r, body) {
 
     });
+
+}
+else
+{ 
+console.log("inside of else of add cart") ; 
+    var productid =req.body.productId;
+    console.log(productid);
+  
+
+    console.log("Cookies: request test items", req.cookies.test);
+    var array =req.cookies.test;
+    array.push(productid);
+    console.log(" data in tempcart array " + array);
+    console.log("creating new response cookie object");
+      res.cookie("test", array);
+    // res.cookie('test', tempCart.push(productid));
+    console.log("final cookie data ");
+   res.send(true);
+    
+  };
+
+
+
+
+
+
+
   });
 module.exports = router;

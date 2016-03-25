@@ -7,7 +7,7 @@ var session = require("express-session");
 
 
 
-router.use(cookieParser(credentials.cookieSecret));
+router.use(cookieParser("credentials.cookieSecret"));
 
 router.use(session({
   resave: false,
@@ -16,13 +16,27 @@ router.use(session({
   key: "user"
 }));
 
+// router.get("/signed",function(req, res, next) 
+// {
+//   console.log("creating cookie" + credentials.cookieSecret);
 
+//   res.cookie('testCookie', {test : "test"}, {signed : true});
+//   console.log(req.signedCookies.testCookie);
+// });
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index');
   // res.render('index', { title: 'Express' });
   console.log("in render index");
+
+ res.cookie("test", []);
+ 
+
+
   console.log(req.session.user);
+
+
+
   if (req.session.user)
   {
     res.render('index', {page : {
@@ -45,6 +59,7 @@ router.get('/', function(req, res, next) {
   }
   else
   {
+
     res.render('index', {page : {
       title : "Macro Center",
       links :  [

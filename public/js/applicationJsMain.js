@@ -25,21 +25,22 @@ window.onload = function() {
 
   var searchButton = document.getElementById("searchButton");
   console.log(searchButton);
-  searchButton.addEventListener("click", searchProduct);
-function searchProduct() {
-
+  searchButton.addEventListener("click", function(e)
+  {
     console.log("inside search event Listener");
-    // e.preventDefault();
+    e.preventDefault();
     var find= document.getElementById("searchField").value;
-
-    console.log(find);
+    console.log("search value is: "+find);
     var url = "";
     url = "/products/search/" + find;
-    console.log(" url before redirecting is : " + url);
-    window.location = "/products/search/gate";
-    // window.location="/products";
+    console.log("url before redirecting is: " + url);
+    window.location = url;
+    // window.location = "/products";
+    // window.location = "/products/search/gate";
+    // window.location="/products/search";
     find.innerHTML = " ";
-  };
+
+  });
 
   if(saveAddress){
     saveAddress.addEventListener("click", addressAccountCredentials)
