@@ -32,16 +32,39 @@ var sessiondata = JSON.parse(data);
 var callCredentials = function(){
   xhrget("GET", "../login/usercredentials", commitAccountChanges);
 }
+var deleteAccountCredentials = function(){
+  xhrget("GET", "../login/usercredentials", deleteAccount);
+}
+var addressAccountCredentials = function(){
+  xhrget("GET", "../login/usercredentials", saveAddress);
+}
 var editUserResults = function(data){
   var json = JSON.parse(data);
   editResults.innerHTML = json.email + " " + json.name;
 }
 
-var deleteAccountCredentials = function(){
-  xhrget("GET", "../login/usercredentials", deleteAccount);
-}
 var deleteAccount = function(data){
   var sessiondata = JSON.parse(data);
    xhrverb("POST", "http://localhost:8080/MacroCenter/rest/deleteUser", editUserResults, sessiondata)
-   window.location = "../login/logout";
+   window.location = "/";
+}
+
+var saveAddress = function(data){
+  var sessiondata = JSON.parse(data);
+  var saveNewAddress = document.getElementById("newAddress");
+  var saveNewAddressType = document.getElementById("newAddressType");
+
+  var json = {
+    id: sessiondata.id,
+    address: saveNewAddress.value ,
+    type: saveNewAddressType.value
+  };
+  xhrverb("POST", "/login/updatesession", undefined, json);
+  xhrverb("POST", "http://localhost:8080/MacroCenter/rest/editAddress", refreshPage, json )
+
+}
+var refreshPage = function(data)
+{
+
+  window.location = "/user/account"
 }

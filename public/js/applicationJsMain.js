@@ -9,6 +9,7 @@ window.onload = function() {
 
   var saveAccountEdit = document.getElementById("saveAccountEdit");
   var deleteAccount = document.getElementById("deleteAccount");
+  var saveAddress = document.getElementById("saveAddress");
 
   if (createuser) {
     createuser.addEventListener("click", sendCreateForm);
@@ -21,9 +22,6 @@ window.onload = function() {
   if(addToCart){
     addToCart.addEventListener("click", addProductToCart)
   }
-
-
-
 
   var searchButton = document.getElementById("searchButton");
   console.log(searchButton);
@@ -43,6 +41,9 @@ function searchProduct() {
     find.innerHTML = " ";
   };
 
+  if(saveAddress){
+    saveAddress.addEventListener("click", addressAccountCredentials)
+  }
 
   if (saveAccountEdit) {
     saveAccountEdit.addEventListener("click", callCredentials);
@@ -52,5 +53,4 @@ function searchProduct() {
     deleteAccount.addEventListener("click", deleteAccountCredentials);
     // welcomeHeader.innHTML="Sign Up";
   }
-
 };

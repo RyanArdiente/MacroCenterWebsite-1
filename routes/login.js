@@ -18,12 +18,11 @@ router.use(session({
 }));
 
 router.post("/", function(req, res) {
-  req.session.user = req.body.email;
-	req.session.userid = req.body.id;
-	req.session.name = req.body.name;
-	console.log(req.session.user);
-	console.log(req.session.id);
-	console.log(req.session.name);
+  req.session.user = req.body.user.email;
+	req.session.userid = req.body.user.id;
+	req.session.name = req.body.user.name;
+  req.session.address = req.body.address.address;
+  req.session.type = req.body.address.type;
   res.render('index');
 });
 
@@ -32,6 +31,8 @@ router.get("/logout", function(req, res) {
   req.session.user = null;
 	req.session.userid = null;
 	req.session.name = null;
+  req.session.address.address = null;
+  req.session.address.type = null;
   res.render("index");
 });
 router.get("/usercredentials", function(req, res) {
@@ -39,10 +40,19 @@ router.get("/usercredentials", function(req, res) {
 		{
 			username: 	req.session.user,
 			name: 	req.session.name,
-			id: 	req.session.userid
+			id: 	req.session.userid,
+      address: req.session.address,
+      type: req.session.type
+
 		}
 	));
 });
+router.post("/updatesession", function(req, res){
+    console.log(req.body);
+    console.log("in updatesession");
+    req.session.address = req.body.address;
+    req.session.type = req.body.type;
+})
 router.get("/newError", function(req, res) {
   req.session.flash = "Some error!";
   res.render("index");
