@@ -4,12 +4,38 @@
 
 <div class = "productCon" id="product">
 </div>
+<div class ="row">
 {{#each page.product}}
-  <a href ="/products/{{{id}}}">{{name}}</a>
-  <p></p>
-{{/each}}
-{{page.product.name}}
+ 
 
+
+   <div class="card card-block">
+      <h3 class="card-title">{{name}}</h3>
+     
+      <p class="card-text"> Discription: {{description}}</p>
+
+      <div class = "row">
+     <div class="col-md-6">
+       <p class="card-text"> <h3>Price: ${{price}} </h3></p>
+       </div>
+  <div class="col-md-6">
+      
+       </div>
+       </div>
+
+       <div class = "row">
+     <div class="col-md-6">
+          <a href ="/products/{{{id}}}" class="btn btn-success"> Go to product</a>
+       </div>
+
+
+
+    </div>
+    </div>
+    {{/each}}
+    </div>
+
+  
 <!-- <button id="addToCart" type="button" value="{{page.product.id}}" class="btn btn-primary">Add to Cart</button> -->
 {{{page.script}}}
 </div>

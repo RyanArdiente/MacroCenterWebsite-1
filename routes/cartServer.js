@@ -2,10 +2,27 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var app = express();
+var cookieParser = require('cookie-parser');
+var credentials = require('../.credentials.js');
+var session = require("express-session");
+
+
+
+router.use(cookieParser(credentials.cookieSecret));
+
+
+router.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: credentials.cookieSecret,
+  key: "user"
+}));
 
 
 
 router.get('/', function(req, res, next) {
+  if(req.session.user)
+  {
   console.log("inside cart route");
   var userId = req.session.userid;
   console.log("id: "+userId);
@@ -22,7 +39,29 @@ router.get('/', function(req, res, next) {
       }
     });
   });
+}
+else
+{
+  res.render('index', {page : {
+      title : "Macro Center",
+      links :  [
+        {
+          name : "link1"
+        },
+        {
+          name : "link2"
+        },
+        {
+          name : "link3"
+        }
+      ]
+    }
+    // res.send(body);
+  });
+  }
+
 });
+
 
 
 router.get('/deleteFromCart/:id', function(req, res, next) {
