@@ -19,7 +19,7 @@ window.onload = function() {
     // welcomeHeader.innHTML="Sign Up";
   }
   if(addToCart){
-    // addToCart.addEventListener("click", addProductToCart)
+    addToCart.addEventListener("click", addProductToCart)
   }
 
 
