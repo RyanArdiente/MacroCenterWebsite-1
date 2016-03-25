@@ -3,7 +3,7 @@ var router = express.Router();
 var request = require('request');
 var app = express();
 
-console.log("server side cartServer.js route loaded");
+// console.log("server side cartServer.js route loaded");
 // router.get('/', function(req, res, next) {
 //   res.render('cart', {
 //     page: {
@@ -16,8 +16,10 @@ console.log("server side cartServer.js route loaded");
 
 router.get('/', function(req, res, next) {
   console.log("inside cart route");
+  var userId = req.session.userid
+  console.log("id: "+userId);
   var cart = {};
-  request('http://localhost:8080/MacroCenter/rest/cart', function(error, r, body) {
+  request('http://localhost:8080/MacroCenter/rest/displayCartItems/'+userId, function(error, r, body) {
     cart = (JSON.parse(body));
     console.log("Inside requst to java Data is  " + cart + " and id is " + cart.id);
     res.render('about', {
@@ -29,6 +31,32 @@ router.get('/', function(req, res, next) {
       }
     });
   });
+});
+
+router.get('/checkout', function(req, res, next)
+{
+  console.log("inside checkout route");
+    res.render('checkout', {
+      page: {
+        header: "Checkout",
+        title: "Checkout",
+        // cart: cart,
+        script: "<script  type='text/javascript' src='../js/checkoutClient.js'></script>"
+      }
+    });
+});
+
+router.get('/checkout/orderplaced', function(req, res, next)
+{
+  console.log("inside orderplaced route");
+    res.render('orderplaced', {
+      page: {
+        header: "Order Placed",
+        title: "Order Placed",
+        // cart: cart,
+        // script: "<script  type='text/javascript' src='../js/orderplacedClient.js'></script>"
+      }
+    });
 });
 
 module.exports = router;

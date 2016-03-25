@@ -56,8 +56,8 @@ router.get('/:id', function(req, res, next) {
   var route = 'http://localhost:8080/MacroCenter/rest/product/' + productId;
   request(route, function(error, r, body) {
     product = (JSON.parse(body));
-    console.log("INside requst to java Data is  " + product + " and id is " + product.id);
-    res.render('product', {
+    console.log("Inside requst to java Data is  " + product + " and id is " + product.id);
+    res.render('singleProduct', {
       page: {
         header: "Products",
         product: product,
@@ -109,7 +109,7 @@ router.get('/category/:category', function(req, res, next) {
         title: "Products",
         product: myproduct,
 
-        script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+        script: "<script src=\"../js/productClient.js\"></script>"
       }
     });
   });
@@ -133,7 +133,7 @@ router.get('/search/:id', function(req, res, next) {
           header: "Products",
           product: product,
           // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-          script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+          script: "<script type=\"text/javascript\" src=\"../../js/productClient.js\"></script>"
         }
       });
     } else
