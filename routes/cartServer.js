@@ -33,9 +33,12 @@ router.get('/deleteFromCart/:id', function(req, res, next) {
   var route = "http://localhost:8080/MacroCenter/rest/deleteCartItem/" + deleteID;
   console.log(route);
    request.del(route);
+res.redirect("/");
 
  
 });
+
+
 
 router.get('/checkout', function(req, res, next)
 {
