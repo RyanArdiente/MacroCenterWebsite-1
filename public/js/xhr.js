@@ -46,5 +46,6 @@ var xhrverb = function(method , url, callback, object)
     }
   };
   xhr.setRequestHeader("Content-Type","application/json");
+  console.log(object.user_id);
   xhr.send(JSON.stringify(object));
 };

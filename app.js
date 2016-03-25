@@ -18,6 +18,7 @@ var login = require("./routes/login");
 var aboutPage = require("./routes/aboutServer");
 var helpPage = require("./routes/helpServer");
 var cart = require("./routes/cartServer");
+var cookiePage = require("./routes/cookie");
 
 
 // view engine setup
@@ -48,7 +49,8 @@ app.use('/login', login);
 app.use('/about', aboutPage);
 app.use('/help', helpPage);
 app.use('/cart', cart);
-
+app.use('/cookie', cookiePage);
+// app.use('/cookietest', cookiePage);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

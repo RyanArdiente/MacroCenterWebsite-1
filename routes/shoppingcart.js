@@ -74,34 +74,6 @@ console.log("inside of else of add cart") ;
     // res.cookie('test', tempCart.push(productid));
     console.log("final cookie data ");
    res.send(true);
-    //res.cookies.mcUserCart.items.push(productid);
-
-
-  // var testproduct =[];
-  
-  //    res.cookies.tempCart.items.push(productid);
-  //    console.log("Length of the tempcart is " +tempCart.length);
-    //      console.log("Cookies items should have productID: ", res.cookies.mcUserCart.items);
-
-    // for (var i = 0; i < tempCart.length; i++) {
-
-  
-    //   console.log(tempCart[i]);
-    //   
-
-
-    // }
-
-      
-        // console.log("Cookies: mcUserCart", req.cookies.mcUserCart);
-        // console.log("Cookies: mcUserCart Product ", req.cookies.mcUserCart.product);
-        
-        // // req.cookies.mcUserCart.items.push(productid);
-        // // res.cookie('mcUserCart', {items : [productid], product: "arrayobj1"});
-        //  //req.cookies.mcUserCart.items.push(productid);
-        //  console.log("Cookies items should have productID: ", req.cookies.mcUserCart.items);
-      
-
     
   };
 

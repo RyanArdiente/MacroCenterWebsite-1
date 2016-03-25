@@ -1,4 +1,16 @@
 <title>{{page.title}}</title>
+<h1>{{page.header}}</h1>
+
+test
+
+{{page.cart[1]}}
+  {{#each page.myCart}}
+  {{.}}
+  {{/each}}
+
+
+
+  <title>{{page.title}}</title>
 <style>
   table, td, th
   {
@@ -14,12 +26,7 @@
 </div>
 
 Test
-{{{page.description}}}
-{{{page.contactLink}}}
-{{{page.info}}}
-{{{page.directions}}}
-{{{page.employeesLink}}}
-{{#if page.employee}}
+
   <table>
     <tr>
       <th>Name</th>
