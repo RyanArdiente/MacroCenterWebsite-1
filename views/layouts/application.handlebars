@@ -27,10 +27,11 @@
 	<script src="https://cdn.jsdelivr.net/tether/1.2.0/tether.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
 	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
 	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
 	<link rel="stylesheet" href="/stylesheets/custom-homepage.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	
 	<link rel="icon" href="/stylesheets/favicon.ico" type="image/ico" sizes="16x16" />
 	<title>{{{page.title}}}</title>
 </head>
@@ -56,11 +57,11 @@
 
 					<div class="col-md-4">
 						<div class="col-sm-6 col-md-12" id="phone_help">
-							<div class="col-md-6">
+							<div class="col-md-6" id ="phoneHolder">
 								<div class="col-md-2">
 									<i class="zmdi zmdi-phone zmdi-hc-2x"></i>
 								</div>
-								<div class="col-md-10">
+								<div class="col-md-10" >
 									Contact
 									<p>
 										<a href="tel:+1-800-555-5555" id="phoneNumber">Call 1-800-555-5555</a>
@@ -70,17 +71,12 @@
 							<a href="/help" class="btn btn-secondary btn-sm" id="helpButton"><i class="zmdi zmdi-help zmdi-hc-2x"></i>Help</a>
 						</div>
 						<div class="col-sm-6 col-md-12" id="login_cart">
-							<div class="col-md-6" id="signUpDiv">
-								<a href="/user/createuser" class="btn btn-secondary btn-sm" id="signUpUser">Sign Up</a>
-								|
-								<div class="btn-group">
-									<button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Account
-									</button>
-									<div class="dropdown-menu">
+							
+								<div class="col-md-6" id="accountbutton">
+									<div class ="row">
+									
 										<a class="dropdown-item" href="/user/signin">Login</a>
 										<a class="dropdown-item" href="/user/account">Account Settings</a>
-										<a class="dropdown-item" href="/products/test" id="productTest">productTest</a>
 										<a class="dropdown-item" href="/login/logout">Logout</a>
 									</div>
 								</div>
@@ -90,9 +86,11 @@
 								<button type="button" class="btn btn-secondary" id="accsetUserBtn">Acc Set</button>
 								|
 								<button type="button" class="btn btn-secondary" id="logoutUserBtn">Logout</button>  -->
-							</div>
+							
 							<div class="col-md-6">
+							<a href="/user/createuser" class="btn btn-secondary btn-sm" id="signUpUser">Sign Up</a>
 								<a href="/cart"><button type="button" class="btn btn-secondary" id="cartCard"><i class="zmdi zmdi-shopping-cart zmdi-hc-2x"></i>My Cart</button></a>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -152,7 +150,7 @@
 
 <!-- ******************** Footer ******************** -->
 
-<nav class="navbar-default navbar-dark bg-primary">
+<nav class="navbar-default navbar-dark bg-primary" id ="footer">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4 text-center" id ="footerCol1">

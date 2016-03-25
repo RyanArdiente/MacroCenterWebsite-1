@@ -59,11 +59,16 @@ text-align: center;
 
 #mainCard {
 
-  background-color: #ffcc80;
+  background-color: #1a75ff;
+  border-radius: 10px;
 
+}
+#phoneHolder{
+  color:blue;
 }
 #phoneNumber{
   font-size: 80%;
+  color:black;
 }
 #viewBody{
 
@@ -120,4 +125,11 @@ text-align: center;
 .space {
   margin: 5% auto;
 }
+
+#footer {
+  color:red;
+}
+
+
+
 
