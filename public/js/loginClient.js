@@ -20,19 +20,21 @@ var loginResults = function(data){
     welcomeHeader.innerHTML="";
     console.log(data + " this is the data object");
     var json = JSON.parse(data);
-    console.log("in login user");
-    console.log(json.id);
-    console.log(json);
-    if (json.id)
-    {
-      xhrverb("POST", "../login", undefined, json);
+
+    var newjson = {
+      user: {
+        id: json.user_id.id,
+        name: json.user_id.name,
+        email:json.user_id.email
+      },
+      address: {
+        address: json.address,
+        type: json.type
+      }
+    }
+
+      xhrverb("POST", "../login", undefined, newjson);
       //xhrget("GET", "../", undefined);
       window.location = "../";
-    }
-    else
-    {
-      console.log("error");
-      console.log("Error: "+ json.name);
-      loginResult.innerHTML = "Error: "+ json.name;
-    }
+
 }

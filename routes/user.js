@@ -99,32 +99,39 @@ router.get('/signin', function(req, res, next)
 });
 router.get('/account', function(req, res, next)
 {
-  console.log("in account");
-  if (res.session)
+  console.log(req.session);
+  if (req.session.userid)
   {
-    if(req.session.userid){
-      console.log("res.session.userid");
-      console.log(res.session.userid);
-    }
-    console.log("in the account settings");
-    console.log(res.session.userid);
-  }
-  else{
-    console.log("in else in account settings");
+      res.render('useraccount',
+      {
+        page:
+        {
+          welcomeHeader: "Account Settings",
+          userName: req.session.name,
+          userUsername: req.session.user,
+          address: req.session.address,
+          type: req.session.type,
+          title: "Account Settings",
+          script : "<script  type='text/javascript' src='../js/accountsettings.js'></script>"
+        }
+      }
+      );
 
   }
-  res.render('useraccount',
-  {
-    page:
+  else{
+    res.render('loginUser',
     {
-      welcomeHeader: "Account Settings",
-      userName: req.session.name,
-      userUsername: req.session.user,
-      title: "Account Settings",
-      script : "<script  type='text/javascript' src='../js/accountsettings.js'></script>"
+      page:
+      {
+        welcomeHeader: "Login",
+        title: "Login",
+        script : "<script  type='text/javascript' src='../js/loginClient.js'></script>"
+      }
     }
+    );
+
   }
-  );
+
 });
 
 module.exports = router;
