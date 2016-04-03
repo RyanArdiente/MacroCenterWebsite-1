@@ -6,7 +6,7 @@ window.onload = function() {
   var createuser = document.getElementById("createuser");
   var loginUser = document.getElementById("loginUser");
   var addToCart = document.getElementById("addToCart");
-
+  var changeOrder = document.getElementById("changeOrder");
   var saveAccountEdit = document.getElementById("saveAccountEdit");
   var deleteAccount = document.getElementById("deleteAccount");
   var saveAddress = document.getElementById("saveAddress");
@@ -22,18 +22,36 @@ window.onload = function() {
   if(addToCart){
     addToCart.addEventListener("click", addProductToCart)
   }
+  //autocomplete with jQuery
+  var queryList = [];
+  $.getJSON('http://localhost:8080/MacroCenter/rest/allProducts', function(data){
+      for (var i=0; i<data.length; i++){
+        queryList.push(data[i].name);
+
+        if(queryList.indexOf(data[i].brand) === -1){
+          queryList.push(data[i].brand)
+        }
+        if(queryList.indexOf(data[i].catagory) === -1){
+          queryList.push(data[i].catagory)
+        }
+
+      }
+      $( '#searchField' ).autocomplete({
+        source: queryList
+      });
+  });
+
 
   var searchButton = document.getElementById("searchButton");
-  console.log(searchButton);
   searchButton.addEventListener("click", function(e)
   {
-    console.log("inside search event Listener");
+
     e.preventDefault();
     var find= document.getElementById("searchField").value;
-    console.log("search value is: "+find);
+
     var url = "";
     url = "/products/search/" + find;
-    console.log("url before redirecting is: " + url);
+
     window.location = url;
     // window.location = "/products";
     // window.location = "/products/search/gate";
@@ -41,7 +59,9 @@ window.onload = function() {
     find.innerHTML = " ";
 
   });
-
+  if(changeOrder){
+    changeOrder.addEventListener("click", resortProducts);
+  }
   if(saveAddress){
     saveAddress.addEventListener("click", addressAccountCredentials)
   }

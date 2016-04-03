@@ -22,6 +22,18 @@
 		color: #00B7FF;
     text-decoration: none;
 	}
+	.ui-autocomplete {
+	 max-height: 100px;
+	 overflow-y: auto;
+	 /* prevent horizontal scrollbar */
+	 overflow-x: hidden;
+ }
+ /* IE 6 doesn't support max-height
+	* we use height instead, but this forces the menu to always be this tall
+	*/
+ * html .ui-autocomplete {
+	 height: 100px;
+ }
 </style>
 <head>
 	<script src="https://cdn.jsdelivr.net/tether/1.2.0/tether.min.js"></script>
@@ -30,8 +42,9 @@
 	<link rel="stylesheet" href="/stylesheets/bootstrap.css">
 	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
 	<link rel="stylesheet" href="/stylesheets/custom-homepage.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="/stylesheets/style.css">
-	
+
 	<link rel="icon" href="/stylesheets/favicon.ico" type="image/ico" sizes="16x16" />
 	<title>{{{page.title}}}</title>
 </head>
@@ -50,8 +63,11 @@
 					</div>
 					<div class="col-md-6" id="navSearchBar">
 						<form class="form-inline pull-md-right">
-							<input class="form-control" type="text" placeholder="Search" name="search" size="40" id="searchField">
-							<button class="btn btn-success-outline" type="submit" id="searchButton">Search</button>
+							<div class="ui-widget">
+							<input class="form-control" size="40" id="searchField">
+								<button class="btn btn-success-outline" type="submit" id="searchButton">Search</button>
+							</div>
+
 						</form>
 					</div>
 
@@ -71,10 +87,10 @@
 							<a href="/help" class="btn btn-secondary btn-sm" id="helpButton"><i class="zmdi zmdi-help zmdi-hc-2x"></i>Help</a>
 						</div>
 						<div class="col-sm-6 col-md-12" id="login_cart">
-							
+
 								<div class="col-md-6" id="accountbutton">
 									<div class ="row">
-									
+
 										<a class="dropdown-item" href="/user/signin">Login</a>
 										<a class="dropdown-item" href="/user/account">Account Settings</a>
 										<a class="dropdown-item" href="/login/logout">Logout</a>
@@ -86,7 +102,7 @@
 								<button type="button" class="btn btn-secondary" id="accsetUserBtn">Acc Set</button>
 								|
 								<button type="button" class="btn btn-secondary" id="logoutUserBtn">Logout</button>  -->
-							
+
 							<div class="col-md-6">
 							<a href="/user/createuser" class="btn btn-secondary btn-sm" id="signUpUser">Sign Up</a>
 								<a href="/cart"><button type="button" class="btn btn-secondary" id="cartCard"><i class="zmdi zmdi-shopping-cart zmdi-hc-2x"></i>My Cart</button></a>
@@ -193,6 +209,7 @@
 	<script src='../../js/xhr.js'></script>
 	<!-- jQuery -->
 	<script src="../../js/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../../js/bootstrap.min.js"></script>

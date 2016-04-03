@@ -84,11 +84,23 @@ router.get('/allProducts', function(req, res, next) {
         product: product,
         title: "Products",
         // script: "<script  type='text/javascript' src='../js/xhr.js'></script>",
-        script: "<script  type='text/javascript' src='../js/productClient.js'></script>"
+        script: "<script  type='text/javascript' src='../../js/productClient.js'></script>"
       }
     });
   });
 
+  console.log("Data is  " + product + " and id is " + product.id);
+});
+router.get('/reorder', function(req, res, next) {
+  var products = res.body.products;
+    res.render('product', {
+      page: {
+        header: "Products",
+        product:products ,
+        title: "Products",
+        script: "<script  type='text/javascript' src='../../js/productClient.js'></script>"
+      }
+    });
   console.log("Data is  " + product + " and id is " + product.id);
 });
 router.get('/category/:category', function(req, res, next) {
@@ -109,7 +121,7 @@ router.get('/category/:category', function(req, res, next) {
         title: "Products",
         product: myproduct,
 
-        script: "<script src=\"../js/productClient.js\"></script>"
+        script: "<script src=\"../../js/productClient.js\"></script>"
       }
     });
   });
