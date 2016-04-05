@@ -51,7 +51,13 @@ router.get('/', function(req, res, next) {
                     script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>"
                 }
             });
+             res.cookie("cart", cart);
+             res.cookie("total", totalPrice);
+
         });
+
+
+
     } else {
         console.log("in else of shopping cart and " + req.cookies.test);
 
@@ -104,10 +110,15 @@ router.get('/', function(req, res, next) {
                             script: "<script  type='text/javascript' src='../js/aboutClient.js'></script>"
                         }
                     });
+
+                        res.cookie("cart2", products);
+                       res.cookie("total2", totalPrice);
                     return;
 
                 }
             });
+
+
         }
 
         // else {
