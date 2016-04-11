@@ -67,5 +67,5 @@ We are building a fully functional E-Commerce web application with node and expr
 <ul>
 <li>GitHub: <a href="https://github.com/RyanArdiente/MacroCenterWebsite-1">MacroCenterWebsite</a></li>
 <li>GitHub: <a href="https://github.com/RyanArdiente/E-CommerceAPI">MacroCenter API</a></li>
-<li>GitHub: <a href="https://github.com/RyanArdiente/E-CommerceAPI">MacroCenter API</a></li>
+<li>Deployed: <a href="http://nayrdnt.com:3001/">MacroCenter</a></li>
 </ul>
