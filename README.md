@@ -13,11 +13,7 @@ Full Stack Web Application with javascript and node in the frontend, and java an
 
 <h4>Organziational/Development Technologies</h4>
 <ul>
-<li><a href="https://github.com/harakara51/MacroCenterWebsite/">GitHub</a></li>
-<li><a href="https://trello.com/b/2xdn1cbc/macro-center">Trello</a></li>
-<li><a href="#">LucidChart</a></li>
-<li>PowerPoint</li>
-
+<li>Trello</li>
 <li>Eclipse</li>
 </ul>
 
@@ -67,3 +63,9 @@ We are building a fully functional E-Commerce web application with node and expr
 <li> inventory management </li>
 </ul>
 
+<h4>Links</h4>
+<ul>
+<li>GitHub: <a href="https://github.com/RyanArdiente/MacroCenterWebsite-1">MacroCenterWebsite</a></li>
+<li>GitHub: <a href="https://github.com/RyanArdiente/E-CommerceAPI">MacroCenter API</a></li>
+<li>GitHub: <a href="https://github.com/RyanArdiente/E-CommerceAPI">MacroCenter API</a></li>
+</ul>
